@@ -1,0 +1,46 @@
+[
+  [
+    {
+      "id": 0,
+      "time": "10:00",
+      "title": "Обед",
+      "verseIndex": "1",
+      "link": ""
+    },
+    {
+      "id": 1,
+      "time": "12:00",
+      "title": "Тихое время",
+      "verseIndex": "",
+      "link": "/quiet-time/1"
+    },
+    {
+      "id": 2,
+      "time": "14:00",
+      "title": "Урок",
+      "verseIndex": "",
+      "link": "/lesson/1"
+    },
+    {
+      "id": 3,
+      "time": "15:00",
+      "title": "Парная",
+      "verseIndex": "",
+      "link": "/pair/1"
+    },
+    {
+      "id": 4,
+      "time": "16:00",
+      "title": "Отзыв",
+      "verseIndex": "",
+      "link": "/feedback"
+    },
+    {
+      "id": 5,
+      "time": "17:00",
+      "title": "Сон",
+      "verseIndex": "",
+      "link": ""
+    }
+  ]
+]
