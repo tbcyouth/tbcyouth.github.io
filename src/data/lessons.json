@@ -1,0 +1,21 @@
+{
+  "1": {
+    "id": 1,
+    "title": "Раны",
+    "content": [
+      {
+        "type": "img",
+        "url": "/media/lessons/lesson-1.jpg"
+      },
+      {
+        "type": "verse",
+        "old": "1 old something 2 hello It's me",
+        "new": "1 new translate 2 yaaaaawhooooo"
+      },
+      {
+        "type": "text",
+        "text": "Hellllllloooo"
+      }
+    ]
+  }
+}
