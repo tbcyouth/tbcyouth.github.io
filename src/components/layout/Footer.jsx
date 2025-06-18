@@ -1,7 +1,7 @@
 
 export default function Footer() {
     return (
-        <footer className="footer bg-black text-white py-4">
+        <footer className="footer bg-black text-white py-4 mt-16">
             <div className="container">
                 <div className="flex items-center gap-y-2 justify-between flex-col md:flex-row">
                     <div className="">© «TASHKENT BETHEL CHURCH», {new Date().getFullYear()}</div>

@@ -12,13 +12,24 @@ const iconMap = {
 export default function ScheduleItem({
                                          title,
                                          time,
+                                         color,
                                          link,
                                          verseIndex,
                                          className,
                                          ...rest
                                      }) {
+    const bgColor = {
+        white: "white",
+        yellow: "#FFE9C6",
+        red: "#FFC6C7",
+        green: "#C6FFCC",
+        purple: "#F4C6FF",
+        blue: "#C6F2FF",
+        gray: "#E8E8E8"
+    }
+
     const [isOpen, setIsOpen] = useState(false);
-    const isSpoiler = !!verseIndex.toString(); // true если есть контент
+    const isSpoiler = !!verseIndex?.toString(); // true если есть контент
 
     const toggleSpoiler = () => {
         if (isSpoiler) {
@@ -29,7 +40,7 @@ export default function ScheduleItem({
     const Wrapper = isSpoiler ? "button" : "div";
 
     return (
-        <div {...rest} className={clsx(className, "border border-black rounded-2xl overflow-hidden transition-all duration-300")}>
+        <div {...rest} className={clsx(className, "border border-black rounded-2xl overflow-hidden transition-all duration-300")} style={{ backgroundColor: bgColor[color] }}>
             <Wrapper
                 onClick={toggleSpoiler}
                 className="w-full flex items-center gap-4 p-1 pl-3 text-left min-h-12"

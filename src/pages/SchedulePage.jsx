@@ -55,10 +55,11 @@ export default function SchedulePage() {
                 {!!day ? day.map((item, i) => (
                     <ScheduleItem
                         key={i}
-                        time={item.time}
-                        title={item.title}
-                        link={item.link}
+                        time={item.time || "--:--"}
+                        title={item.title || "NO$#^@T1TLe"}
+                        link={item.link || ""}
                         verseIndex={item.verseIndex}
+                        color={item.color || "white"}
                         className="mb-2"
                     />
                 )):(

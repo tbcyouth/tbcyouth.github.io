@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import {FilePlus2, Trash2} from "lucide-react";
 import {Textarea} from "../index";
+import Swal from "sweetalert2";
 
 export default function Notes() {
     const [notes, setNotes] = useState(() => {
@@ -28,8 +29,29 @@ export default function Notes() {
     };
 
     const deleteNote = (id) => {
-        const updated = notes.filter(note => note.id !== id);
-        setNotes(updated);
+        Swal.fire({
+            title: "Вы уверены?",
+            text: "Вы действительно хотите удалить эту заметку?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#000",
+            cancelButtonColor: "#909090",
+            confirmButtonText: "Да",
+            cancelButtonText: "Нет",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const updated = notes.filter(note => note.id !== id);
+                setNotes(updated);
+
+                Swal.fire({
+                    title: "Успешно!",
+                    text: "Вы успешно удалили заметку.",
+                    confirmButtonText: "Хорошо",
+                    confirmButtonColor: "#000",
+                    icon: "success"
+                });
+            }
+        });
     };
 
     return (
@@ -68,6 +90,8 @@ export default function Notes() {
                     </div>
                 ))}
             </div>
+            <p className="text-gray-500 my-2">(Все заметки строго хранятся на вашем устройстве, никто кроме вас не имеет к ним доступа)</p>
+
         </div>
     );
 }
