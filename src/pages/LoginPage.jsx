@@ -1,15 +1,23 @@
 // pages/LoginPage.jsx
 import { useState } from "react";
 import groupsData from "../data/groups.json";
-import { useNavigate } from "react-router-dom";
+import {Navigate, useLocation, useNavigate} from "react-router-dom";
 import {Eye, EyeOff} from "lucide-react";
 
 export default function LoginPage() {
+
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const [isPass, setIsPass] = useState(true)
+
+    const authGroup = localStorage.getItem("authGroup");
+    const location = useLocation();
+
+    if (authGroup) {
+        return <Navigate to="/group" state={{ from: location }} replace />;
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();

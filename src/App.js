@@ -9,10 +9,8 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    {/* Открытая главная страница */}
+                    {/* Открытая страница */}
                     <Route index element={<Home />} />
-
-                    {/* Страница логина - тоже открыта */}
                     <Route path="login" element={<Login />} />
                     <Route path="about" element={<About />} />
 

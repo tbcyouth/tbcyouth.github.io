@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import {Verses} from "../../data"
 import { useNavigate } from "react-router-dom";
 import {formatVerse} from "../../utils"; // в начале файла
+import Swal from 'sweetalert2';
 
 const allVerses = [...Verses]
 
@@ -109,9 +110,30 @@ export default function Header({ title = "Title is empty", group = "Добро �
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem("authGroup");
-        setIsMenuOpen(false);
-        navigate("/");
+        Swal.fire({
+            title: "Вы уверены?",
+            text: "Вы действительно хотите выйти с аккаунта группы?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#000",
+            cancelButtonColor: "#909090",
+            confirmButtonText: "Да",
+            cancelButtonText: "Нет",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem("authGroup");
+                setIsMenuOpen(false);
+                navigate("/");
+
+                Swal.fire({
+                    title: "Успешно!",
+                    text: "Вы успешно вышли с аккаунта группы",
+                    confirmButtonText: "Хорошо",
+                    confirmButtonColor: "#000",
+                    icon: "success"
+                });
+            }
+        });
     };
 
     const saved = localStorage.getItem("authGroup");
