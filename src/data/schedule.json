@@ -131,13 +131,14 @@
     {
       "time": " 8:30",
       "title": "Группа: Тихое время",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/quiet-time/1"
     },
     {
       "time": " 9:00",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 2
     },
     {
       "time": " 9:10",
@@ -147,7 +148,7 @@
     {
       "time": " 9:40",
       "title": "Перерыв",
-      "color": "grey"
+      "color": "gray"
     },
     {
       "time": "10:00",
@@ -173,7 +174,7 @@
       "time": "13:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 3
     },
     {
       "time": "13:50",
@@ -200,7 +201,7 @@
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 1
+      "verseIndex": 4
     },
     {
       "time": "18:50",
@@ -237,7 +238,115 @@
 
 
   [
-
+    {
+      "time": " 9:00",
+      "title": "Подъем",
+      "color": "white"
+    },
+    {
+      "time": " 9:00",
+      "title": "Водные процедуры",
+      "color": "white"
+    },
+    {
+      "time": " 9:30",
+      "title": "Группа: Тихое время",
+      "color": "yellow",
+      "link": "/quiet-time/2"
+    },
+    {
+      "time": "10:00",
+      "title": "Стих",
+      "color": "yellow",
+      "verseIndex": 5
+    },
+    {
+      "time": "10:10",
+      "title": "Завтрак",
+      "color": "purple"
+    },
+    {
+      "time": "10:40",
+      "title": "Перерыв",
+      "color": "gray"
+    },
+    {
+      "time": "11:00",
+      "title": "Прославление",
+      "color": "red"
+    },
+    {
+      "time": "11:20",
+      "title": "Лекция",
+      "color": "red"
+    },
+    {
+      "time": "11:40",
+      "title": "Стих",
+      "color": "yellow",
+      "verseIndex": 6
+    },
+    {
+      "time": "12:00",
+      "title": "Свободное время (готовка)",
+      "color": "white"
+    },
+    {
+      "time": "15:00",
+      "title": "Обед",
+      "color": "purple"
+    },
+    {
+      "time": "15:40",
+      "title": "Свободное время",
+      "color": "white"
+    },
+    {
+      "time": "17:00",
+      "title": "Группа: Урок 4",
+      "color": "yellow"
+    },
+    {
+      "time": "18:30",
+      "title": "Стих",
+      "color": "yellow",
+      "verseIndex": 7
+    },
+    {
+      "time": "18:50",
+      "title": "Ужин",
+      "color": "purple"
+    },
+    {
+      "time": "19:30",
+      "title": "Свободное время",
+      "color": "white"
+    },
+    {
+      "time": "20:00",
+      "title": "Подготовка к фестивалю",
+      "color": "blue"
+    },
+    {
+      "time": "21:00",
+      "title": "Фестиваль",
+      "color": "blue"
+    },
+    {
+      "time": "22:30",
+      "title": "Призы",
+      "color": "blue"
+    },
+    {
+      "time": "23:00",
+      "title": "Водные процедуры",
+      "color": "white"
+    },
+    {
+      "time": "00:00",
+      "title": "Сон",
+      "color": "white"
+    }
   ],
 
 
@@ -261,13 +370,14 @@
     {
       "time": " 8:30",
       "title": "Группа: Тихое время",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/quiet-time/3"
     },
     {
       "time": " 9:00",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 8
     },
     {
       "time": " 9:10",
@@ -277,7 +387,7 @@
     {
       "time": " 9:40",
       "title": "Перерыв",
-      "color": "grey"
+      "color": "gray"
     },
     {
       "time": "10:00",
@@ -303,7 +413,7 @@
       "time": "13:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 9
     },
     {
       "time": "13:50",
@@ -330,7 +440,7 @@
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 1
+      "verseIndex": 10
     },
     {
       "time": "18:50",
@@ -385,13 +495,14 @@
     {
       "time": " 8:30",
       "title": "Группа: Тихое время",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/quiet-time/4"
     },
     {
       "time": " 9:00",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 11
     },
     {
       "time": " 9:10",
@@ -401,7 +512,7 @@
     {
       "time": " 9:40",
       "title": "Перерыв",
-      "color": "grey"
+      "color": "gray"
     },
     {
       "time": "10:00",
@@ -422,7 +533,7 @@
       "time": "13:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 12
     },
     {
       "time": "13:50",
@@ -449,7 +560,7 @@
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 1
+      "verseIndex": 13
     },
     {
       "time": "18:50",
@@ -504,13 +615,14 @@
     {
       "time": " 8:30",
       "title": "Группа: Тихое время",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/quiet-time/5"
     },
     {
       "time": " 9:00",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 14
     },
     {
       "time": " 9:10",
@@ -520,7 +632,7 @@
     {
       "time": " 9:40",
       "title": "Перерыв",
-      "color": "grey"
+      "color": "gray"
     },
     {
       "time": "10:00",
@@ -546,7 +658,7 @@
       "time": "13:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 15
     },
     {
       "time": "13:50",
@@ -573,7 +685,7 @@
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 1
+      "verseIndex": 16
     },
     {
       "time": "18:50",
@@ -628,13 +740,14 @@
     {
       "time": " 8:30",
       "title": "Группа: Тихое время",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/quiet-time/6"
     },
     {
       "time": " 9:00",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 17
     },
     {
       "time": " 9:10",
@@ -644,7 +757,7 @@
     {
       "time": " 9:40",
       "title": "Перерыв",
-      "color": "grey"
+      "color": "gray"
     },
     {
       "time": "10:00",
@@ -675,7 +788,7 @@
       "time": "13:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 0
+      "verseIndex": 18
     },
     {
       "time": "13:50",
@@ -706,7 +819,7 @@
     {
       "time": "17:00",
       "title": "Домой!!!",
-      "color": "grey"
+      "color": "gray"
     }
   ]
 ]
