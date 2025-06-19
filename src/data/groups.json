@@ -7,11 +7,11 @@
     "slug": "gruppa-alfa",
     "members": [
       {
-        "name": "Мария",
+        "name": "Влад",
         "room": "VIP 2"
       },
       {
-        "name": "Иван",
+        "name": "Ривко",
         "room": "VIP 2"
       },
       {
@@ -40,11 +40,11 @@
     "slug": "gruppa-beta",
     "members": [
       {
-        "name": "Мария",
+        "name": "Мелисса",
         "room": "VIP 2"
       },
       {
-        "name": "Иван",
+        "name": "Даня",
         "room": "VIP 2"
       },
       {
@@ -73,11 +73,77 @@
     "slug": "gruppa-omega",
     "members": [
       {
-        "name": "Мария",
+        "name": "Даша",
         "room": "VIP 2"
       },
       {
-        "name": "Иван",
+        "name": "Стас",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Олег",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Петр",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Влад",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Игорь",
+        "room": "VIP 2"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "login": "group4",
+    "password": "abcd2",
+    "name": "Группа Сигма",
+    "slug": "gruppa-sigma",
+    "members": [
+      {
+        "name": "Мунира",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Вера",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Олег",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Петр",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Влад",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Игорь",
+        "room": "VIP 2"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "login": "group5",
+    "password": "abcd3",
+    "name": "Группа Дельта",
+    "slug": "gruppa-delta",
+    "members": [
+      {
+        "name": "Юля",
+        "room": "VIP 2"
+      },
+      {
+        "name": "Давид",
         "room": "VIP 2"
       },
       {
