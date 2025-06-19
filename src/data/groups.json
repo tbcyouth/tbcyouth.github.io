@@ -4,6 +4,7 @@
     "login": "group1",
     "password": "1234",
     "name": "Группа Альфа",
+    "slug": "gruppa-alfa",
     "members": [
       {
         "name": "Мария",
@@ -36,6 +37,7 @@
     "login": "group2",
     "password": "abcd",
     "name": "Группа Бета",
+    "slug": "gruppa-beta",
     "members": [
       {
         "name": "Мария",
@@ -68,6 +70,7 @@
     "login": "group3",
     "password": "abcd1",
     "name": "Группа Омега",
+    "slug": "gruppa-omega",
     "members": [
       {
         "name": "Мария",

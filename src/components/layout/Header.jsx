@@ -1,12 +1,9 @@
 import {NavLink, useLocation} from 'react-router-dom';
-import { AlignRight, X, House, Info, ClipboardList, ShieldAlert, Users, LogOut, LogIn } from 'lucide-react';
+import { AlignRight, X, House, Info, ClipboardList, ShieldAlert, Users, LogOut, LogIn, HeartPlus } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
-import {Verses} from "../../data"
 import { useNavigate } from "react-router-dom";
-import {formatVerse} from "../../utils"; // в начале файла
 import Swal from 'sweetalert2';
-
-const allVerses = [...Verses]
+import {VerseLine} from "../index";
 
 const iconMap = {
     House,
@@ -14,6 +11,7 @@ const iconMap = {
     ClipboardList,
     Users,
     ShieldAlert,
+    HeartPlus
 };
 
 const links = [
@@ -47,6 +45,12 @@ const links = [
         icon: "ShieldAlert",
         isOpen: false,
     },
+    {
+        name: "Оценка",
+        link: "/score",
+        icon: "HeartPlus",
+        isOpen: false,
+    },
 ]
 
 export default function Header({ title = "Title is empty", group = "Добро пожаловать" }) {
@@ -61,6 +65,7 @@ export default function Header({ title = "Title is empty", group = "Добро �
         '/group': 'Моя группа',
         '/feedback': 'Отзыв',
         '/rule': 'Правила',
+        '/score': 'Оценка',
     };
 
     let currentTitle = pageTitles[location.pathname];
@@ -143,12 +148,8 @@ export default function Header({ title = "Title is empty", group = "Добро �
         <>
             {/* Header */}
             <header ref={headerRef} className="fixed top-0 left-0 right-0 bg-black text-white rounded-b-2xl z-50">
-                <marquee>
-                    <div className="flex">
-                        <div className="italic">«{formatVerse(allVerses[(Math.floor(Math.random() * allVerses.length))].content)}»</div>
-                        <div className="">&nbsp;–&nbsp;{allVerses[(Math.floor(Math.random() * allVerses.length))].link}</div>
-                    </div>
-                </marquee>
+
+                <VerseLine/>
                     <div className="">
                         <div className="container">
                             <div className="pb-2.5 flex items-center justify-between gap-x-3">
@@ -213,6 +214,8 @@ export default function Header({ title = "Title is empty", group = "Добро �
                                     {name}
                                 </NavLink>
                             );
+
+                            return null;
                         })}
                     </div>
                     <div className="">

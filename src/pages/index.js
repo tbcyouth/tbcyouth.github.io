@@ -8,3 +8,4 @@ export { default as Group } from './GroupPage';
 export { default as Feedback } from './FeedbackPage';
 export { default as Pair } from './PairPage';
 export { default as Rule } from './RulePage';
+export { default as Score } from './ScorePage';

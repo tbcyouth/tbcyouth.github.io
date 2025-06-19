@@ -1,6 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Default';
-import {Home, About, Schedule, QuietTime, Lesson, Login, Group, Feedback, Pair, Rule} from './pages/index';
+import {Home, About, Schedule, QuietTime, Lesson, Login, Group, Feedback, Pair, Rule, Score} from './pages/index';
 import {ProtectedRoute} from "./components";
 
 
@@ -35,6 +35,9 @@ export default function App() {
                     } />
                     <Route path="rule" element={
                         <ProtectedRoute><Rule /></ProtectedRoute>
+                    } />
+                    <Route path="score" element={
+                        <ProtectedRoute><Score /></ProtectedRoute>
                     } />
                 </Route>
             </Routes>

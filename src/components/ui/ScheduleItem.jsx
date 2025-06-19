@@ -1,13 +1,10 @@
-import {ArrowRight, ChevronRight, UtensilsCrossed} from "lucide-react";
+import {ArrowRight, ChevronRight} from "lucide-react";
 import { useState } from "react";
 import clsx from "clsx";
 import {Link} from "react-router-dom";
 import {formatVerse} from "../../utils";
 import {Verses} from "../../data";
 
-const iconMap = {
-    UtensilsCrossed,
-}
 
 export default function ScheduleItem({
                                          title,

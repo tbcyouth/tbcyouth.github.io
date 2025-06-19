@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Input, Textarea } from "../components";
 import {sendMessage} from "../utils";
+import Swal from "sweetalert2";
+import {useNavigate} from "react-router-dom";
 
 
 // Массив вопросов
@@ -10,13 +12,16 @@ const questions = [
     "Что можно улучшить в следующем семинаре?",
 ];
 
-export default function LoginPage() {
+export default function FeedbackPage() {
     const [username, setUsername] = useState('');
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
 
 
     const saved = localStorage.getItem("authGroup");
     const groupData = saved ? JSON.parse(saved) : null;
+
+
+    const navigate = useNavigate();
 
     const handleTextareaChange = (index, value) => {
         const newAnswers = [...answers];
@@ -33,7 +38,33 @@ export default function LoginPage() {
             message += `<b>${question}</b>\n${answers[index] || '-'}\n\n`;
         });
 
-        sendMessage(message).then(r => alert("Отправлено!"));
+        Swal.fire({
+            title: "Все проверили?",
+            text: "Вы готовы отправить отзыв?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#000",
+            cancelButtonColor: "#909090",
+            confirmButtonText: "Да",
+            cancelButtonText: "Нет",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                sendMessage(message)
+                    .then(r => {
+                        navigate(-1)
+
+                        Swal.fire({
+                            title: "Успешно!",
+                            text: "Вы успешно отправили отзыв!",
+                            confirmButtonText: "Хорошо",
+                            confirmButtonColor: "#000",
+                            icon: "success"
+                        })
+                    })
+            }
+        });
+
+
 
     };
 

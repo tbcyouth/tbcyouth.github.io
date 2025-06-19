@@ -12,6 +12,7 @@ export { default as TranslateSwitcher } from './ui/TranslateSwitcher';
 export { default as ReturnToSchedule } from './ui/ReturnToSchedule';
 export { default as PairRound } from './ui/PairRound';
 export { default as Notes } from './ui/Notes';
+export { default as VerseLine } from './ui/VerseLine';
 
 
 export { default as ProtectedRoute } from './conditions/ProtectedRoute';

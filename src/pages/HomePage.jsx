@@ -1,7 +1,5 @@
-import {Header} from '../components';
-import {sendMessage} from "../utils";
 import {Link} from "react-router-dom";
-import {ArrowRight, LogIn} from "lucide-react";
+import {LogIn} from "lucide-react";
 
 function App() {
     return (
