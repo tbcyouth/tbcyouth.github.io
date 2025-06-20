@@ -1,17 +1,25 @@
-import {formatVerse} from "../../utils";
-import {Verses} from "../../data";
+import { useEffect, useState } from "react";
+import { formatVerse } from "../../utils";
+import { Verses } from "../../data";
 
-const allVerses = [...Verses]
+export default function VerseLine() {
+    const [verse, setVerse] = useState(null);
 
-export default function VerseLine () {
+    useEffect(() => {
+        const allVerses = [...Verses];
+        const randomIndex = Math.floor(Math.random() * allVerses.length);
+        setVerse(allVerses[randomIndex]);
+    }, []); // пустой массив означает, что выполнится один раз при монтировании
+
+    if (!verse) return null;
+
     return (
-        /* eslint-disable jsx-a11y/no-distracting-elements */
+        // eslint-disable-next-line jsx-a11y/no-distracting-elements
         <marquee>
             <div className="flex">
-                <div className="italic">«{formatVerse(allVerses[(Math.floor(Math.random() * allVerses.length))].content)}»</div>
-                <div className="">&nbsp;–&nbsp;{allVerses[(Math.floor(Math.random() * allVerses.length))].link}</div>
+                <div className="italic">«{formatVerse(verse.content)}»</div>
+                <div>&nbsp;–&nbsp;{verse.link}</div>
             </div>
         </marquee>
-        /* eslint-enable jsx-a11y/no-distracting-elements */
-    )
+    );
 }

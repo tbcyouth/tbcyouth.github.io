@@ -53,7 +53,7 @@ export default function QuietTimePage() {
                     <div className="w-full px-4 p-2 border border-black rounded-xl">{questions[questionId] || "Обнови"}</div>
                     <button className="p-2 border border-black rounded-xl" onClick={() => setQuestionId(randomNumber)}><Repeat/></button>
                 </div>
-                <Notes/>
+                <Notes storageKey={`notes_pair_${pairId}`}/>
             </div>
         </div>
     );

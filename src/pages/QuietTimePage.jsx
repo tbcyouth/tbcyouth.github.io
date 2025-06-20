@@ -24,11 +24,11 @@ export default function QuietTimePage() {
                 </div>
 
                 {isNewTranslate ? (
-                    <div>
+                    <div className="text-xl">
                         {formatVerse(data.new)}
                     </div>
                 ) : (
-                    <div>
+                    <div className="text-xl">
                         {formatVerse(data.old)}
                     </div>
                 )}
