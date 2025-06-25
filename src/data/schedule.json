@@ -1,71 +1,50 @@
 [
   [
     {
-      "time": " 8:00",
-      "title": "Подъем",
-      "color": "white"
-    },
-    {
-      "time": " 8:00",
+      "time": "11:00",
       "title": "В путь",
       "color": "gray"
     },
     {
-      "time": "10:00",
-      "title": "Прославление",
-      "color": "red"
-    },
-    {
-      "time": "10:20",
-      "title": "Слово",
-      "color": "red"
-    },
-    {
-      "time": "11:00",
-      "title": "Служителя/Расселение",
-      "color": "red"
-    },
-    {
-      "time": "11:20",
+      "time": "13:00",
       "title": "Правила и подготовка",
       "color": "white"
     },
     {
-      "time": "11:40",
-      "title": "Группа: Знакомство (Название группы)",
-      "color": "yellow"
+      "time": "13:30",
+      "title": "Прославление",
+      "color": "red"
     },
     {
-      "time": "13:30",
+      "time": "13:50",
+      "title": "Слово",
+      "color": "red"
+    },
+    {
+      "time": "14:30",
+      "title": "Служителя/Расселение",
+      "color": "red"
+    },
+    {
+      "time": "15:00",
       "title": "Стих",
       "color": "yellow",
       "verseIndex": 0
     },
     {
-      "time": "13:50",
+      "time": "15:30",
       "title": "Обед",
       "color": "purple"
     },
     {
-      "time": "14:30",
-      "title": "Парная молитва",
-      "color": "green",
-      "link": "/pair/0"
-    },
-    {
-      "time": "15:00",
-      "title": "Игры",
-      "color": "green"
-    },
-    {
-      "time": "16:30",
-      "title": "Перервы",
-      "color": "white"
+      "time": "16:00",
+      "title": "Группа: Знакомство",
+      "color": "yellow"
     },
     {
       "time": "17:00",
-      "title": "Группа: Урок 1",
-      "color": "yellow"
+      "title": "Игры",
+      "color": "green"
     },
     {
       "time": "18:30",
@@ -80,8 +59,8 @@
     },
     {
       "time": "19:30",
-      "title": "Свободное время",
-      "color": "white"
+      "title": "Группа: Урок 1",
+      "color": "yellow"
     },
     {
       "time": "21:00",

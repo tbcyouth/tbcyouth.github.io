@@ -20,7 +20,7 @@ export default function GroupPage() {
                             :
                         <div className="flex justify-between border border-black rounded-xl p-2 mb-2">
                             <div className="">{member.name}</div>
-                            <div className="">{member.room}</div>
+                            <div className="text-gray-500">{member.room}</div>
                         </div>
                 )}
             </div>

@@ -1,34 +1,38 @@
 [
   {
     "id": 0,
-    "login": "group1",
-    "password": "1234",
+    "login": "GodIsLove",
+    "password": "He_Loves_Us<3",
     "name": "Группа Альфа",
     "slug": "gruppa-alfa",
     "members": [
       {
         "name": "Влад",
-        "room": "VIP 2"
+        "room": "\"Маленький дом\" - №1"
       },
       {
         "name": "Ривко",
-        "room": "VIP 2"
+        "room": "\"Берёзки\" - №1"
       },
       {
-        "name": "Олег",
-        "room": "VIP 2"
+        "name": "Андрей",
+        "room": "\"Маленький дом\" - №3"
       },
       {
-        "name": "Петр",
-        "room": "VIP 2"
+        "name": "Артем",
+        "room": "\"Маленький дом\" - №1"
       },
       {
-        "name": "Влад",
-        "room": "VIP 2"
+        "name": "Ксюша",
+        "room": "\"Берёзки\" - №5"
       },
       {
-        "name": "Игорь",
-        "room": "VIP 2"
+        "name": "Сиона",
+        "room": "\"Берёзки\" - №5"
+      },
+      {
+        "name": "Кирилл",
+        "room": "\"Комфорт\" - №4"
       }
     ]
   },
@@ -41,126 +45,146 @@
     "members": [
       {
         "name": "Мелисса",
-        "room": "VIP 2"
+        "room": "\"Комфорт\" - №2"
       },
       {
         "name": "Даня",
-        "room": "VIP 2"
+        "room": "\"Маленький дом\" - №1"
       },
       {
-        "name": "Олег",
-        "room": "VIP 2"
+        "name": "Мартин",
+        "room": "\"Маленький дом\" - №2"
       },
       {
-        "name": "Петр",
-        "room": "VIP 2"
+        "name": "Камила",
+        "room": "\"Берёзки\" - №5"
       },
       {
-        "name": "Влад",
-        "room": "VIP 2"
+        "name": "Вика",
+        "room": "\"Берёзки\" - №1"
       },
       {
-        "name": "Игорь",
-        "room": "VIP 2"
+        "name": "Хорхе",
+        "room": "\"Комфорт\" - №3"
+      },
+      {
+        "name": "Даша",
+        "room": "\"Берёзки\" - №5"
       }
     ]
   },
   {
     "id": 2,
-    "login": "group3",
-    "password": "abcd1",
+    "login": "MadeinGod",
+    "password": "Grace4U&Me",
     "name": "Группа Омега",
     "slug": "gruppa-omega",
     "members": [
       {
         "name": "Даша",
-        "room": "VIP 2"
+        "room": "\"Комфорт\" - №2"
       },
       {
         "name": "Стас",
-        "room": "VIP 2"
+        "room": "\"Маленький дом\" - №1"
       },
       {
-        "name": "Олег",
-        "room": "VIP 2"
+        "name": "Аня",
+        "room": "\"Берёзки\" - №4"
       },
       {
-        "name": "Петр",
-        "room": "VIP 2"
+        "name": "Алина",
+        "room": "\"Берёзки\" - №1"
       },
       {
-        "name": "Влад",
-        "room": "VIP 2"
+        "name": "Семуэл",
+        "room": "\"Комфорт\" - №4"
       },
       {
-        "name": "Игорь",
-        "room": "VIP 2"
+        "name": "Милдред",
+        "room": "\"Комфорт\" - №3"
+      },
+      {
+        "name": "Даниил",
+        "room": "\"Маленький дом\" - №2"
+      },
+      {
+        "name": "Вика",
+        "room": "\"Берёзки\" - №3"
       }
     ]
   },
   {
     "id": 3,
-    "login": "group4",
-    "password": "abcd2",
+    "login": "blagodat.vnutri",
+    "password": "veranda_089",
     "name": "Группа Сигма",
     "slug": "gruppa-sigma",
     "members": [
       {
         "name": "Мунира",
-        "room": "VIP 2"
+        "room": "\"Комфорт\" - №2"
       },
       {
         "name": "Вера",
-        "room": "VIP 2"
+        "room": "\"Комфорт\" - №2"
       },
       {
-        "name": "Олег",
-        "room": "VIP 2"
+        "name": "Принц Гельмут",
+        "room": "\"Маленький дом\" - №2"
       },
       {
-        "name": "Петр",
-        "room": "VIP 2"
+        "name": "Никита",
+        "room": "\"Комфорт\" - №4"
       },
       {
-        "name": "Влад",
-        "room": "VIP 2"
+        "name": "Ева",
+        "room": "\"Берёзки\" - №5"
       },
       {
-        "name": "Игорь",
-        "room": "VIP 2"
+        "name": "Дэниел",
+        "room": "\"Комфорт\" - №3"
+      },
+      {
+        "name": "Нази",
+        "room": "\"Берёзки\" - №3"
       }
     ]
   },
   {
     "id": 4,
-    "login": "group5",
-    "password": "abcd3",
+    "login": "FatherLoveYou",
+    "password": "Тюлики",
     "name": "Группа Дельта",
     "slug": "gruppa-delta",
     "members": [
       {
         "name": "Юля",
-        "room": "VIP 2"
+        "room": "\"Комфорт\" - №2"
       },
       {
         "name": "Давид",
-        "room": "VIP 2"
+        "room": "\"Маленький дом\" - №1"
       },
       {
-        "name": "Олег",
-        "room": "VIP 2"
-      },
-      {
-        "name": "Петр",
-        "room": "VIP 2"
-      },
-      {
-        "name": "Влад",
-        "room": "VIP 2"
+        "name": "Дэва",
+        "room": "\"Маленький дом\" - №1"
       },
       {
         "name": "Игорь",
-        "room": "VIP 2"
+        "room": "\"Маленький дом\" - №3"
+      },
+      {
+        "name": "Марина",
+        "room": "\"Берёзки\" - №5"
+      },
+      {
+        "name": "Даша",
+        "room": "\"Берёзки\" - №3"
+      },
+      {
+        "name": "Амир",
+        "room": "\"Комфорт\" - №4"
       }
     ]
   }
