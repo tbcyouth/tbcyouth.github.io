@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Input, Textarea } from "../components";
-import {sendMessage} from "../utils";
+import { sendMessage } from "../utils";
 import Swal from "sweetalert2";
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const questions = [
     "Возраст",
-    "Лидер",
     "Телефон",
+    "Телеграм",
     "Какие были ожидания от семинара?",
     "Общие впечатления о семинаре?",
     "Что вам запомнилось больше всего?",
@@ -24,10 +23,8 @@ export default function FeedbackPage() {
     const [username, setUsername] = useState('');
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
 
-
     const saved = localStorage.getItem("authGroup");
     const groupData = saved ? JSON.parse(saved) : null;
-
 
     const navigate = useNavigate();
 
@@ -38,12 +35,31 @@ export default function FeedbackPage() {
     };
 
     const handleSubmit = () => {
+        if (!username.trim()) {
+            return Swal.fire({
+                title: "Поле обязательно!",
+                text: "Пожалуйста, укажите ваше ФИО.",
+                icon: "error",
+                confirmButtonColor: "#000",
+            });
+        }
+
+        const emptyIndex = answers.findIndex(answer => !answer.trim());
+        if (emptyIndex !== -1) {
+            return Swal.fire({
+                title: "Поле обязательно!",
+                text: `Пожалуйста, ответьте на вопрос: "${questions[emptyIndex]}"`,
+                icon: "error",
+                confirmButtonColor: "#000",
+            });
+        }
+
         let message = `<b>ОТЗЫВ О СЕМИНАРЕ</b>\n`;
-        message += `<b>Группа:</b> ${groupData.name}\n`;
+        message += `<b>Группа:</b> ${groupData?.name || "—"}\n`;
         message += `<b>ФИО:</b> ${username}\n\n`;
 
         questions.forEach((question, index) => {
-            message += `<b>${question}</b>\n${answers[index] || '-'}\n\n`;
+            message += `<b>${question}</b>\n${answers[index]}\n\n`;
         });
 
         Swal.fire({
@@ -58,22 +74,19 @@ export default function FeedbackPage() {
         }).then((result) => {
             if (result.isConfirmed) {
                 sendMessage(message)
-                    .then(r => {
-                        navigate(-1)
-
+                    .then(() => {
+                        navigate(-1);
                         Swal.fire({
                             title: "Успешно!",
                             text: "Вы успешно отправили отзыв!",
                             confirmButtonText: "Хорошо",
                             confirmButtonColor: "#000",
                             icon: "success"
-                        })
-                    })
+                        });
+                    });
             }
         });
-
-
-
+        message += `#${groupData?.name.replace(/\s+/g, '_').toLowerCase() || "—"}`
     };
 
     return (
