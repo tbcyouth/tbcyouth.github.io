@@ -127,6 +127,9 @@ export default function Header({ title = "Title is empty", group = "Добро �
         }).then((result) => {
             if (result.isConfirmed) {
                 localStorage.removeItem("authGroup");
+                if (localStorage.getItem("isAdmin") === "aga") {
+                    localStorage.removeItem("isAdmin");
+                }
                 setIsMenuOpen(false);
                 navigate("/");
 

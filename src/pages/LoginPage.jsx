@@ -27,8 +27,14 @@ export default function LoginPage() {
         );
 
         if (group) {
-            localStorage.setItem("authGroup", JSON.stringify(group));
-            navigate("/group");
+            if (group.id >= 5) {
+                localStorage.setItem("authGroup", JSON.stringify(group));
+                localStorage.setItem("isAdmin", "aga");
+                navigate("/group");
+            } else if (group.id < 5) {
+                localStorage.setItem("authGroup", JSON.stringify(group));
+                navigate("/group");
+            }
         } else {
             setError("Неверный логин или пароль");
         }

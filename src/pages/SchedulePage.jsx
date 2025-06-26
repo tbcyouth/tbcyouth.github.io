@@ -30,14 +30,26 @@ export default function SchedulePage() {
                         </div>
                     )}
                 <div className="flex flex-col items-center">
-                    {+dayPosition === 0 ? (
-                        <div>Сегодня</div>
-                    ) : +dayPosition > 0 ? (
-                        <div>Скоро будет</div>
-                    ) : +dayPosition < 0 ? (
-                        <div>Уже прошел</div>
+                    {localStorage.getItem("isAdmin") === "aga" ? (
+                        +dayPosition === 0 ? (
+                            <div>Сегодня, админ</div>
+                        ) : +dayPosition > 0 ? (
+                            <div>Скоро будет, админ</div>
+                        ) : +dayPosition < 0 ? (
+                            <div>Уже прошел, админ</div>
+                        ) : (
+                            <div>-</div>
+                        )
                     ) : (
-                        <div>-</div>
+                        +dayPosition === 0 ? (
+                            <div>Сегодня</div>
+                        ) : +dayPosition > 0 ? (
+                            <div>Скоро будет</div>
+                        ) : +dayPosition < 0 ? (
+                            <div>Уже прошел</div>
+                        ) : (
+                            <div>-</div>
+                        )
                     )}
                     <div className="text-3xl font-bold">День #{today - firstDay + +dayPosition + 1}</div>
                 </div>

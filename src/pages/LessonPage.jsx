@@ -32,6 +32,7 @@ export default function QuietTimePage() {
                         {item.type === "verse" && <div>{formatVerse(!!isNewTranslate ? item.new : item.old)}</div>}
                         {item.type === "img" && <img alt={data.title} src={item.url} className="mx-auto max-w-full" />}
                         {item.type === "text" &&  <div>{item.text}</div>}
+                        {localStorage.getItem("isAdmin") === "aga" && item.type === "text_for_admins" &&  <div>{item.text}</div>}
                     </div>
                 ))}
 

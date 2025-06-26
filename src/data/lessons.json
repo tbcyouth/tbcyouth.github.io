@@ -15,6 +15,140 @@
       {
         "type": "text",
         "text": "Hellllllloooo"
+      },
+      {
+        "type": "text_for_admins",
+        "text": "Hellllllloooo but for admins"
+      }
+    ]
+  },
+
+
+
+  "2": {
+    "id": 2,
+    "title": "Раны",
+    "content": [
+      {
+        "type": "img",
+        "url": "/media/lessons/lesson-1.jpg"
+      },
+      {
+        "type": "verse",
+        "old": "1 old something 2 hello It's me",
+        "new": "1 new translate 2 yaaaaawhooooo"
+      },
+      {
+        "type": "text",
+        "text": "Hellllllloooo"
+      },
+      {
+        "type": "text_for_admins",
+        "text": "Hellllllloooo but for admins"
+      }
+    ]
+  },
+
+
+
+  "3": {
+    "id": 3,
+    "title": "Раны",
+    "content": [
+      {
+        "type": "img",
+        "url": "/media/lessons/lesson-1.jpg"
+      },
+      {
+        "type": "verse",
+        "old": "1 old something 2 hello It's me",
+        "new": "1 new translate 2 yaaaaawhooooo"
+      },
+      {
+        "type": "text",
+        "text": "Hellllllloooo"
+      },
+      {
+        "type": "text_for_admins",
+        "text": "Hellllllloooo but for admins"
+      }
+    ]
+  },
+
+
+
+  "4": {
+    "id": 4,
+    "title": "Раны",
+    "content": [
+      {
+        "type": "img",
+        "url": "/media/lessons/lesson-1.jpg"
+      },
+      {
+        "type": "verse",
+        "old": "1 old something 2 hello It's me",
+        "new": "1 new translate 2 yaaaaawhooooo"
+      },
+      {
+        "type": "text",
+        "text": "Hellllllloooo"
+      },
+      {
+        "type": "text_for_admins",
+        "text": "Hellllllloooo but for admins"
+      }
+    ]
+  },
+
+
+
+  "5": {
+    "id": 5,
+    "title": "Раны",
+    "content": [
+      {
+        "type": "img",
+        "url": "/media/lessons/lesson-1.jpg"
+      },
+      {
+        "type": "verse",
+        "old": "1 old something 2 hello It's me",
+        "new": "1 new translate 2 yaaaaawhooooo"
+      },
+      {
+        "type": "text",
+        "text": "Hellllllloooo"
+      },
+      {
+        "type": "text_for_admins",
+        "text": "Hellllllloooo but for admins"
+      }
+    ]
+  },
+
+
+
+  "6": {
+    "id": 6,
+    "title": "Раны",
+    "content": [
+      {
+        "type": "img",
+        "url": "/media/lessons/lesson-1.jpg"
+      },
+      {
+        "type": "verse",
+        "old": "1 old something 2 hello It's me",
+        "new": "1 new translate 2 yaaaaawhooooo"
+      },
+      {
+        "type": "text",
+        "text": "Hellllllloooo"
+      },
+      {
+        "type": "text_for_admins",
+        "text": "Hellllllloooo but for admins"
       }
     ]
   }
