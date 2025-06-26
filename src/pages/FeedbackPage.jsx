@@ -5,11 +5,19 @@ import Swal from "sweetalert2";
 import {useNavigate} from "react-router-dom";
 
 
-// Массив вопросов
 const questions = [
+    "Возраст",
+    "Лидер",
+    "Телефон",
     "Какие были ожидания от семинара?",
-    "Что больше всего запомнилось?",
+    "Общие впечатления о семинаре?",
+    "Что вам запомнилось больше всего?",
+    "Что понравилось больше всего?",
+    "Что не понравилось совсем?",
     "Что можно улучшить в следующем семинаре?",
+    "Что вы переосмыслили?",
+    "Что изменится в вашей жизни после этого семинара?",
+    "Какие решения вы приняли на этом семинаре?",
 ];
 
 export default function FeedbackPage() {
@@ -32,7 +40,7 @@ export default function FeedbackPage() {
     const handleSubmit = () => {
         let message = `<b>ОТЗЫВ О СЕМИНАРЕ</b>\n`;
         message += `<b>Группа:</b> ${groupData.name}\n`;
-        message += `<b>Имя:</b> ${username}\n\n`;
+        message += `<b>ФИО:</b> ${username}\n\n`;
 
         questions.forEach((question, index) => {
             message += `<b>${question}</b>\n${answers[index] || '-'}\n\n`;
@@ -74,9 +82,9 @@ export default function FeedbackPage() {
             <p className="mb-6">Напиши отзыв о данном семинаре!</p>
 
             <div className="mb-6">
-                <h5 className="font-medium mb-2">Ваше имя</h5>
+                <h5 className="font-medium mb-2">Ваше ФИО</h5>
                 <Input
-                    label="Ваше имя"
+                    label="ФИО"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     id="username"

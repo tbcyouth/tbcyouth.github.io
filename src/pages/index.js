@@ -6,6 +6,6 @@ export { default as Lesson } from './LessonPage';
 export { default as Login } from './LoginPage';
 export { default as Group } from './GroupPage';
 export { default as Feedback } from './FeedbackPage';
-export { default as Pair } from './PairPage';
+export { default as Pray } from './PrayPage';
 export { default as Rule } from './RulePage';
 export { default as Score } from './ScorePage';

@@ -8,7 +8,8 @@
     {
       "time": "13:00",
       "title": "Правила и подготовка",
-      "color": "white"
+      "color": "white",
+      "link": "/rule"
     },
     {
       "time": "13:30",
@@ -164,7 +165,7 @@
       "time": "14:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pair/1"
+      "link": "/pray/0"
     },
     {
       "time": "15:00",
@@ -403,7 +404,7 @@
       "time": "14:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pair/2"
+      "link": "/pray/1"
     },
     {
       "time": "15:00",
@@ -523,7 +524,7 @@
       "time": "14:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pair/3"
+      "link": "/pray/2"
     },
     {
       "time": "15:00",
@@ -648,7 +649,7 @@
       "time": "14:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pair/4"
+      "link": "/pray/3"
     },
     {
       "time": "15:00",
@@ -761,7 +762,8 @@
     {
       "time": "13:00",
       "title": "Группа: Отзывы",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/feedback"
     },
     {
       "time": "13:30",
@@ -778,7 +780,7 @@
       "time": "14:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pair/5"
+      "link": "/pray/4"
     },
     {
       "time": "15:00",
@@ -797,7 +799,7 @@
     },
     {
       "time": "17:00",
-      "title": "Домой!!!",
+      "title": "Домой:_(",
       "color": "gray"
     }
   ]

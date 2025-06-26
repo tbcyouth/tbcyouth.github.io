@@ -75,7 +75,7 @@ export default function Header({ title = "Title is empty", group = "Добро �
             currentTitle = 'Расписание';
         } else if (location.pathname.startsWith('/quiet-time/')) {
             currentTitle = "Тихое время";
-        } else if (location.pathname.startsWith('/pair/')) {
+        } else if (location.pathname.startsWith('/pray/')) {
             currentTitle = "Парная молитва";
         } else if (location.pathname.startsWith('/lesson/')) {
             currentTitle = "Урок";

@@ -9,7 +9,7 @@ const days = Schedule;
 
 
 
-const firstDay = getDayOfYear(new Date(2025, 5, 25))
+const firstDay = getDayOfYear(new Date(2025, 5, 28))
 const today = getDayOfYear(new Date())
 
 
