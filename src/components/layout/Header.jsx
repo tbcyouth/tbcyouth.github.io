@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {VerseLine} from "../index";
+import {getAuthGroup, isAdmin, logout} from "../../utils";
 
 const iconMap = {
     House,
@@ -56,6 +57,8 @@ const links = [
 export default function Header({ title = "Title is empty", group = "Добро пожаловать" }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+
+    const admin = isAdmin();
 
     const pageTitles = {
         '/': 'Главная',
@@ -126,10 +129,7 @@ export default function Header({ title = "Title is empty", group = "Добро �
             cancelButtonText: "Нет",
         }).then((result) => {
             if (result.isConfirmed) {
-                localStorage.removeItem("authGroup");
-                if (localStorage.getItem("isAdmin") === "aga") {
-                    localStorage.removeItem("isAdmin");
-                }
+                logout()
                 setIsMenuOpen(false);
                 navigate("/");
 
@@ -144,8 +144,7 @@ export default function Header({ title = "Title is empty", group = "Добро �
         });
     };
 
-    const saved = localStorage.getItem("authGroup");
-    const groupData = saved ? JSON.parse(saved) : null;
+    const groupData = getAuthGroup();
 
     return (
         <>
@@ -162,7 +161,7 @@ export default function Header({ title = "Title is empty", group = "Добро �
                                     </div>
                                     <div className="border-l border-gray-500 pl-3 relative flex-auto">
                                         <div className="font-semibold text-xl truncate absolute w-full">{currentTitle}</div>
-                                        <div className="font-medium truncate absolute bottom-0 w-full">{group}</div>
+                                        <div className="font-medium truncate absolute bottom-0 w-full">{!!admin && "Админ - "}{group}</div>
                                     </div>
                                 </div>
                                 <div>

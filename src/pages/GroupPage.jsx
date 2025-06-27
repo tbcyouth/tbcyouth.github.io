@@ -1,6 +1,7 @@
+import {getAuthGroup} from '../utils/index';
+
 export default function GroupPage() {
-    const saved = localStorage.getItem("authGroup");
-    const group = saved ? JSON.parse(saved) : null;
+    const group = getAuthGroup();
 
     if (!group) return <div className="container py-10 text-red-600">Нет доступа</div>;
 

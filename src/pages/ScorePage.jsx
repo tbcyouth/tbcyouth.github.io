@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Input, Textarea } from "../components";
-import { sendMessage } from "../utils";
+import {getAuthGroup, sendMessage} from "../utils";
 import Swal from "sweetalert2";
 import { Groups } from "../data/";
 
 const categories = ["Инициативность", "Дисциплина", "Креативность"];
 
 export default function ScorePage() {
-    const saved = localStorage.getItem("authGroup");
-    const groupData = saved ? JSON.parse(saved) : null;
+    const groupData = getAuthGroup();
 
     const [writer, setWriter] = useState('');
     const [targetGroup, setTargetGroup] = useState('');
@@ -29,7 +28,7 @@ export default function ScorePage() {
 <b>Про кого:</b> ${targetGroup}
 <b>Категория:</b> ${category}
 
-<b>Что сделал?</b> 
+<b>Кто и что сделал?</b> 
 ${description}
 
 #оценка_день_${new Date().getDate()}
@@ -118,9 +117,9 @@ ${description}
             </div>
 
             <div className="mb-6">
-                <h5 className="font-medium mb-2">Что сделал участник?</h5>
+                <h5 className="font-medium mb-2">Кто и что сделал?</h5>
                 <Textarea
-                    label="Опишите действие"
+                    label="Ваня, помог нам убрать со стола <3"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     id="description"

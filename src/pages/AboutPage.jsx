@@ -1,5 +1,3 @@
-import { Document, Page } from 'react-pdf';
-import { useState } from 'react';
 
 
 export default function AboutPage() {

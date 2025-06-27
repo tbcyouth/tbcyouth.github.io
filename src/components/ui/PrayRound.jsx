@@ -1,4 +1,5 @@
 import { Groups } from "../../data";
+import {getAuthGroup} from "../../utils";
 
 // 🔁 Новый формат: массив массивов пар [a, b], порядок сохраняется
 const algorithms = {
@@ -36,6 +37,8 @@ export default function PrayRound({ groupIds = [], roundId }) {
     const roundIndex = Number(roundId);
     const roundPairs = algorithms[groupSize]?.[roundIndex];
 
+    const group = getAuthGroup();
+
     if (!roundPairs) {
         return <div>Нет данных для такого раунда или размера группы. ({groupSize} участников, раунд {roundId})</div>;
     }
@@ -46,7 +49,7 @@ export default function PrayRound({ groupIds = [], roundId }) {
                 <>
                     {/*{Math.floor(roundPairs.length / 2)} - {index} <p></p>*/}
                     {/*{Math.floor(roundPairs.length / 2) === index ? "yes" : "no"}*/}
-                    {JSON.parse(localStorage.getItem("authGroup")).id === groupIds[0] && index <= Math.floor(roundPairs.length / 2) &&
+                    {group.id === groupIds[0] && index <= Math.floor(roundPairs.length / 2) &&
                         <div
                             key={index}
                             className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
@@ -56,7 +59,7 @@ export default function PrayRound({ groupIds = [], roundId }) {
                             <div className="justify-self-end font-medium">{allMembers[b]?.name || `#${b}`}</div>
                         </div>
                     }
-                    {JSON.parse(localStorage.getItem("authGroup")).id === groupIds[1] && index >= Math.floor(roundPairs.length / 2) &&
+                    {group.id === groupIds[1] && index >= Math.floor(roundPairs.length / 2) &&
                         <div
                             key={index}
                             className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"

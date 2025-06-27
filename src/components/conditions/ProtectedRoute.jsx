@@ -1,10 +1,11 @@
+// components/ProtectedRoute.jsx
 import { Navigate, useLocation } from "react-router-dom";
 
 export default function ProtectedRoute({ children }) {
-    const authGroup = localStorage.getItem("authGroup");
+    const groupId = localStorage.getItem("groupId");
     const location = useLocation();
 
-    if (!authGroup) {
+    if (!groupId) {
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
 

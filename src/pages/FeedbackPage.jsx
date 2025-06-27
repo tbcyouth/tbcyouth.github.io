@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Input, Textarea } from "../components";
-import { sendMessage } from "../utils";
+import {getAuthGroup, sendMessage} from "../utils";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
@@ -23,8 +23,7 @@ export default function FeedbackPage() {
     const [username, setUsername] = useState('');
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
 
-    const saved = localStorage.getItem("authGroup");
-    const groupData = saved ? JSON.parse(saved) : null;
+    const groupData = getAuthGroup();
 
     const navigate = useNavigate();
 

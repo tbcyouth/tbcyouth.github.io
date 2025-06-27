@@ -2,12 +2,12 @@ import { useParams } from 'react-router-dom';
 import {Notes, PrayRound, ReturnToSchedule} from "../components";
 import {useState} from "react";
 import {Repeat} from "lucide-react";
+import {getAuthGroup} from "../utils";
 
 export default function QuietTimePage() {
     const { prayId } = useParams();
 
-    const saved = localStorage.getItem("authGroup");
-    const group = saved ? JSON.parse(saved) : null;
+    const group = getAuthGroup()
 
     const questions = [
         "Какую самую важную вещь в жизни вы игнорировали, но теперь она требует вашего внимания?",

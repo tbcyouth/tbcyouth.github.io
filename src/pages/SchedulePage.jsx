@@ -1,21 +1,22 @@
 import {Link, useParams} from 'react-router-dom';
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import {CalendarCheck, CalendarCheck2, Check, ChevronLeft, ChevronRight, FileCheck} from "lucide-react";
 import {ScheduleItem} from "../components";
 import {Schedule} from "../data";
-import {getDayOfYear} from "../utils";
+import {getDayOfYear, isAdmin} from "../utils";
 
 const days = Schedule;
 
 
 
 
-const firstDay = getDayOfYear(new Date(2025, 5, 28))
+const firstDay = getDayOfYear(new Date(2025, 5, 25))
 const today = getDayOfYear(new Date())
 
 
 export default function SchedulePage() {
     const { dayPosition } = useParams();
     const day = days[today - firstDay + +dayPosition];
+    const admin = isAdmin()
 
     return (
         <div className="container">
@@ -30,17 +31,7 @@ export default function SchedulePage() {
                         </div>
                     )}
                 <div className="flex flex-col items-center">
-                    {localStorage.getItem("isAdmin") === "aga" ? (
-                        +dayPosition === 0 ? (
-                            <div>Сегодня, админ</div>
-                        ) : +dayPosition > 0 ? (
-                            <div>Скоро будет, админ</div>
-                        ) : +dayPosition < 0 ? (
-                            <div>Уже прошел, админ</div>
-                        ) : (
-                            <div>-</div>
-                        )
-                    ) : (
+                    {
                         +dayPosition === 0 ? (
                             <div>Сегодня</div>
                         ) : +dayPosition > 0 ? (
@@ -50,7 +41,7 @@ export default function SchedulePage() {
                         ) : (
                             <div>-</div>
                         )
-                    )}
+                    }
                     <div className="text-3xl font-bold">День #{today - firstDay + +dayPosition + 1}</div>
                 </div>
                     {days.length - 1 > today - firstDay + +dayPosition ? (
@@ -63,20 +54,38 @@ export default function SchedulePage() {
                         </div>
                     )}
             </div>
-            <div className="">
-                {!!day ? day.map((item, i) => (
-                    <ScheduleItem
-                        key={i}
-                        time={item.time || "--:--"}
-                        title={item.title || "NO$#^@T1TLe"}
-                        link={item.link || ""}
-                        verseIndex={item.verseIndex}
-                        color={item.color || "white"}
-                        className="mb-2"
-                    />
-                )):(
-                    <div>На этот день нет расписания</div>
-                )}
+            <div className="relative ">
+                <div className="">
+                    {!!day ? day.map((item, i) => (
+                        <ScheduleItem
+                            key={i}
+                            time={item.time || "--:--"}
+                            title={item.title || "NO$#^@T1TLe"}
+                            link={item.link || ""}
+                            verseIndex={item.verseIndex}
+                            color={item.color || "white"}
+                            className="mb-2"
+                        />
+                    )):(
+                        <div>На этот день нет расписания</div>
+                    )}
+                </div>
+                {
+                    +dayPosition === 0 ? (
+                        <div></div>
+                    ) : +dayPosition > 0 ? (
+                        <>
+                            {!admin && <div className="absolute -top-5 -left-5 -right-5 -bottom-5 backdrop-blur-[10px]"></div>}
+                        </>
+                    ) : +dayPosition < 0 ? (
+                            <div className="pointer-events-none">
+                                <div className="absolute -top-5 -left-5 -right-5 -bottom-5 bg-green-500/20 blur-[10px]"></div>
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-green-500 "><CalendarCheck2 strokeWidth={0.75} size="400"/></div>
+                            </div>
+                    ) : (
+                        <div>-</div>
+                    )
+                }
             </div>
         </div>
     );

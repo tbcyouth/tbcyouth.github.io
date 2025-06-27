@@ -1,13 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import {Footer, Header} from '../components/index';
+import {getAuthGroup} from "../utils";
 
 
 
 export default function Layout() {
-
-    const saved = localStorage.getItem("authGroup");
-    const group = saved ? JSON.parse(saved) : null;
-
+    const group = getAuthGroup();
 
     return (
         <div className="flex flex-col min-h-screen">
