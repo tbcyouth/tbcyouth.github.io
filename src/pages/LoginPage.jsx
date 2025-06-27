@@ -3,6 +3,7 @@ import { useState } from "react";
 import groupsData from "../data/groups.json";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
+import {getAuthGroup} from "../utils";
 
 export default function LoginPage() {
     const [login, setLogin] = useState("");
@@ -13,8 +14,9 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const groupId = localStorage.getItem("groupId");
-    if (groupId) {
+    const auth = getAuthGroup();
+
+    if (!!auth) {
         return <Navigate to="/group" state={{ from: location }} replace />;
     }
 

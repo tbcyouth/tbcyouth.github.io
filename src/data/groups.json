@@ -3,6 +3,7 @@
     "id": 0,
     "login": "MadeinGod",
     "password": "Grace4U&Me",
+    "adminpass": "Adm!!Grace4U&Me!!",
     "name": "Группа Даши",
     "slug": "gruppa-dashi",
     "members": [
@@ -82,6 +83,7 @@
     "id": 2,
     "login": "blagodat.vnutri",
     "password": "veranda_089",
+    "adminpass": "Adm!!veranda_089!!",
     "name": "Группа Муниры",
     "slug": "gruppa-muniri",
     "members": [
@@ -119,6 +121,7 @@
     "id": 3,
     "login": "One_love",
     "password": "one_line",
+    "adminpass": "Adm!!one_line!!",
     "name": "Группа Мелиссы",
     "slug": "gruppa-melissi",
     "members": [
@@ -156,6 +159,7 @@
     "id": 4,
     "login": "FatherLoveYou",
     "password": "Тюлики",
+    "adminpass": "Adm!!Тюлики!!",
     "name": "Группа Юли",
     "slug": "gruppa-yuli",
     "members": [

@@ -1,12 +1,16 @@
 import { useParams } from 'react-router-dom';
 import {Lessons} from "../data";
 import { useState } from "react";
-import {formatVerse} from "../utils/index";
+import {formatVerse, isAdmin} from "../utils/index";
 import {ReturnToSchedule, TranslateSwitcher} from "../components";
+import ReactMarkdown from "react-markdown";
+import '../styles/notes.css';
+
 
 export default function QuietTimePage() {
     const { lessonId } = useParams();
     const data = Lessons[lessonId];
+    const admin = isAdmin()
 
     const [isNewTranslate, setIsNewTranslate] = useState(() => localStorage.getItem("isNewTranslate") === "true");
 
@@ -28,30 +32,48 @@ export default function QuietTimePage() {
                 </div>
 
                 {data.content.map((item, index) => (
-                    <div>
-                        {item.type === "verse" && <div>{formatVerse(!!isNewTranslate ? item.new : item.old)}</div>}
-                        {item.type === "img" && <img alt={data.title} src={item.url} className="mx-auto max-w-full" />}
-                        {item.type === "text" &&  <div>{item.text}</div>}
-                        {localStorage.getItem("isAdmin") === "aga" && item.type === "text_for_admins" &&  <div>{item.text}</div>}
+                    <div className="mb-4 text-lg">
+                        {item.type === "verse" 
+                            ?
+                                (admin === !item.isOpen &&
+                                    <div className="markdown-body">
+                                        <blockquote>
+                                            &laquo;{formatVerse(!!isNewTranslate ? item.new : item.old)}&raquo;
+                                            <div className="font-medium">– {item.title}</div>
+                                        </blockquote>
+                                    </div>
+                                )
+                            ||
+                                (item.isOpen &&
+                                    <div className="markdown-body bg-green-300/30">
+                                        <blockquote>
+                                            &laquo;{formatVerse(!!isNewTranslate ? item.new : item.old)}&raquo;
+                                            <div className="font-medium">– {item.title}</div>
+                                        </blockquote>
+                                    </div>
+                                )
+                            :
+                        item.type === "img" 
+                            ?
+                                (admin === !item.isOpen && <img alt={data.title} src={item.url} className="mx-auto max-w-full" />) || (item.isOpen && <img alt={data.title} src={item.url} className="mx-auto max-w-full" />)
+                            :
+                        item.type === "text"
+                            ?
+                            (admin === !item.isOpen &&
+                                item.text.split('\n').map((line, idx) => (
+                                    <div className="mb-4 markdown-body"><ReactMarkdown key={idx}>{line}</ReactMarkdown></div>
+                                )))
+                            ||
+                                (item.isOpen
+                            &&
+                            item.text.split('\n').map((line, idx) => (
+                                <div className="mb-4 bg-green-300/30 markdown-body"><ReactMarkdown key={idx}>{line}</ReactMarkdown></div>
+                            )))
+                            :
+                            <div></div>
+                        }
                     </div>
                 ))}
-
-                {/*{data.content.map((item, index) => (*/}
-                {/*    <div>*/}
-                {/*        {item.type === "img" && <img src={item.url} />}*/}
-                {/*        {item.type === "verse" && <div>{formatVerse(item.text)}</div>}*/}
-                {/*    </div>*/}
-                {/*))}*/}
-
-                {/*{isNewTranslate ? (*/}
-                {/*    <div>*/}
-                {/*        {formatVerse(data.new)}*/}
-                {/*    </div>*/}
-                {/*) : (*/}
-                {/*    <div>*/}
-                {/*        {formatVerse(data.old)}*/}
-                {/*    </div>*/}
-                {/*)}*/}
             </div>
         </div>
     );

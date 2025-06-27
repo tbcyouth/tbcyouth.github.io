@@ -1,17 +1,13 @@
 import {Link, useParams} from 'react-router-dom';
-import {CalendarCheck, CalendarCheck2, Check, ChevronLeft, ChevronRight, FileCheck} from "lucide-react";
+import {CalendarCheck2, ChevronLeft, ChevronRight} from "lucide-react";
 import {ScheduleItem} from "../components";
 import {Schedule} from "../data";
 import {getDayOfYear, isAdmin} from "../utils";
 
 const days = Schedule;
 
-
-
-
-const firstDay = getDayOfYear(new Date(2025, 5, 25))
+const firstDay = getDayOfYear(new Date(2025, 5, 28))
 const today = getDayOfYear(new Date())
-
 
 export default function SchedulePage() {
     const { dayPosition } = useParams();
