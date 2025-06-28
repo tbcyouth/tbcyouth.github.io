@@ -3,7 +3,7 @@
 export default function AboutPage() {
 
     return (
-        <div>
+        <div className="-mt-8 -mb-20">
 
             <img src="/media/about/about-us_page-0001.jpg" alt=""/>
             <img src="/media/about/about-us_page-0002.jpg" alt=""/>
