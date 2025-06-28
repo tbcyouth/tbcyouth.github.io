@@ -20,6 +20,13 @@ export default function ScorePage() {
             return;
         }
 
+        if (localStorage.getItem(`amountOfVotes-${new Date().getDate()}`) !== null) {
+            localStorage.setItem(`amountOfVotes-${new Date().getDate()}`, Number(localStorage.getItem(`amountOfVotes-${new Date().getDate()}`)) + 1);
+        } else {
+            localStorage.setItem(`amountOfVotes-${new Date().getDate()}`, 1);
+        }
+        
+
         const message = `
 <b>💬 ОЦЕНКА</b>
 
@@ -60,7 +67,12 @@ ${description}
     const otherGroups = Groups.filter(group => group.name !== groupData?.name);
 
     return (
-        <div className="container max-w-xl mx-auto py-6">
+        localStorage.getItem(`amountOfVotes-${new Date().getDate()}`) >= 3 ? 
+            (<div className="container text-3xl mx-auto py-6 text-center">
+               Вы проголосовали максимальное количество раз за сегодня
+            </div>
+            ) : (
+            <div className="container max-w-xl mx-auto py-6">
             <h1 className="text-2xl font-bold mb-4">Очки группы</h1>
 
             {/* Фейковый input — отображение своей группы */}
@@ -133,6 +145,7 @@ ${description}
             >
                 Отправить
             </button>
-        </div>
+            </div>
+        )
     );
 }
