@@ -61,7 +61,8 @@
     {
       "time": "19:30",
       "title": "Группа: Урок 1",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/lesson/1"
     },
     {
       "time": "21:00",
@@ -175,7 +176,8 @@
     {
       "time": "17:00",
       "title": "Группа: Урок 2",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/lesson/2"
     },
     {
       "time": "18:30",
@@ -284,7 +286,8 @@
     {
       "time": "17:00",
       "title": "Группа: Урок 3",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/lesson/3"
     },
     {
       "time": "18:30",
@@ -414,7 +417,8 @@
     {
       "time": "17:00",
       "title": "Группа: Урок 4",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/lesson/4"
     },
     {
       "time": "18:30",
@@ -534,7 +538,8 @@
     {
       "time": "17:00",
       "title": "Группа: Урок 5",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/lesson/5"
     },
     {
       "time": "18:30",
@@ -659,7 +664,8 @@
     {
       "time": "17:00",
       "title": "Группа: Урок 6",
-      "color": "yellow"
+      "color": "yellow",
+      "link": "/lesson/6"
     },
     {
       "time": "18:30",
