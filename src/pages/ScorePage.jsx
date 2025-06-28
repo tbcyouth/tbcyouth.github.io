@@ -13,19 +13,14 @@ export default function ScorePage() {
     const [targetGroup, setTargetGroup] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('Инициативность'); // ← по умолчанию
+    const [isLoading, setIsLoading] = useState(false);
+    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbysnDrhRju4AgFS1LzT0iTo-YWKS_xU_Un4WtoSrFlkP0eJFFIZCMo-23h5Th1RH6bVYg/exec";
 
     const handleSubmit = () => {
         if (!writer || !targetGroup || !description || !category) {
             Swal.fire("Ошибка", "Пожалуйста, заполните все поля", "error");
             return;
         }
-
-        if (localStorage.getItem(`amountOfVotes-${new Date().getDate()}`) !== null) {
-            localStorage.setItem(`amountOfVotes-${new Date().getDate()}`, Number(localStorage.getItem(`amountOfVotes-${new Date().getDate()}`)) + 1);
-        } else {
-            localStorage.setItem(`amountOfVotes-${new Date().getDate()}`, 1);
-        }
-        
 
         const message = `
 <b>💬 ОЦЕНКА</b>
@@ -53,12 +48,50 @@ ${description}
             confirmButtonColor: "#000",
         }).then((res) => {
             if (res.isConfirmed) {
-                sendMessage(message).then(() => {
-                    Swal.fire("Успешно!", "Сообщение отправлено!", "success");
+                setIsLoading(true);
+
+                const payload = {
+                    writer: writer,
+                    targetGroup: targetGroup,
+                    description: description,
+                    category: category,
+                    date: new Date().getDate() + "." + new Date().getMonth() + "." + new Date().getFullYear(),
+                };
+    
+                // Отправляем POST-запрос на URL нашего Google Apps Script
+                fetch(GOOGLE_APP_SCRIPT_URL, {
+                    method: 'POST',
+                    // ВАЖНО: Apps Script требует особого формата для POST, поэтому обходной путь с redirect и text/plain
+                    mode: 'no-cors', // Для обхода некоторых CORS-ограничений при простом POST
+                    redirect: 'follow',
+                    headers: {
+                        // Content-Type убираем, так как Apps Script будет ругаться на 'application/json' с CORS
+                    },
+                    body: JSON.stringify(payload),
+                })
+                .then(() => {
+                    const now_date = new Date().getDate();
+                    // ВАЖНО: т.к. мы используем обходной путь, мы не можем прочитать ответ от сервера.
+                    // Мы просто будем считать, что если ошибки не произошло, то все успешно.
+                    if (localStorage.getItem(`amountOfVotes-${now_date}`) !== null) {
+                        localStorage.setItem(`amountOfVotes-${now_date}`, Number(localStorage.getItem(`amountOfVotes-${now_date}`)) + 1);
+                    } else {
+                        localStorage.setItem(`amountOfVotes-${now_date}`, 1);
+                    }
+                    Swal.fire("Успешно!", "Ваш голос был отправлен на обработку!", "success");
+                    
+                    // Сбрасываем поля формы
                     setWriter('');
                     setTargetGroup('');
                     setDescription('');
                     setCategory('Инициативность');
+                })
+                .catch(error => {
+                    console.error("Ошибка при отправке очка:", error);
+                    Swal.fire("Ошибка!", "Не удалось отправить ваш голос.", "error");
+                })
+                .finally(() => {
+                    setIsLoading(false);
                 });
             }
         });
