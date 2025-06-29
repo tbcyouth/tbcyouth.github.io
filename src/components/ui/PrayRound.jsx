@@ -49,7 +49,7 @@ export default function PrayRound({ groupIds = [], roundId }) {
                 <>
                     {/*{Math.floor(roundPairs.length / 2)} - {index} <p></p>*/}
                     {/*{Math.floor(roundPairs.length / 2) === index ? "yes" : "no"}*/}
-                    {group.id === groupIds[0] && index <= Math.floor(roundPairs.length / 2) &&
+                    {group.id === 0 &&
                         <div
                             key={index}
                             className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
@@ -59,7 +59,17 @@ export default function PrayRound({ groupIds = [], roundId }) {
                             <div className="justify-self-end font-medium">{allMembers[b]?.name || `#${b}`}</div>
                         </div>
                     }
-                    {group.id === groupIds[1] && index >= Math.floor(roundPairs.length / 2) &&
+                    {group.id === groupIds[0] && index <= Math.floor(roundPairs.length / 2) && group.id !== 0 &&
+                        <div
+                            key={index}
+                            className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
+                        >
+                            <div className="justify-self-start font-medium">{allMembers[a]?.name || `#${a}`}</div>
+                            <div className="justify-self-center">– и –</div>
+                            <div className="justify-self-end font-medium">{allMembers[b]?.name || `#${b}`}</div>
+                        </div>
+                    }
+                    {group.id === groupIds[1] && index >= Math.floor(roundPairs.length / 2) && group.id !== 0 &&
                         <div
                             key={index}
                             className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
