@@ -14,7 +14,7 @@ export default function ScorePage() {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('Инициативность'); // ← по умолчанию
     const [isLoading, setIsLoading] = useState(false);
-    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz8K7QqzVL28c0acmqlu5Z-_VX4GPOtJy1o2HBGl0slC_k7GlTZFgeFkZrmep7Ch6oQPA/exec";
+    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHKNbhLKcSuXRQx-6jTqaY1AXttbLFJQqFI98WDk3rguwZLP5OpBZnUk4CGC6NdSJWww/exec";
 
     const handleSubmit = () => {
         if (!writer || !targetGroup || !description || !category) {

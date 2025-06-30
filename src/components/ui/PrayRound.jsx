@@ -45,11 +45,28 @@ export default function PrayRound({ groupIds = [], roundId }) {
 
     return (
         <div className="space-y-2">
-            {roundPairs.map(([a, b], index) => (
-                <>
-                    {/*{Math.floor(roundPairs.length / 2)} - {index} <p></p>*/}
-                    {/*{Math.floor(roundPairs.length / 2) === index ? "yes" : "no"}*/}
-                    {group.id === 0 &&
+            {roundPairs.map(([a, b], index) => {
+                
+                let shouldShowPair = false;
+
+                const isFirstGroup = group.id === groupIds[0];
+                const isSecondGroup = group.id === groupIds[1];
+                const middleIndex =  Math.floor(roundPairs.length / 2);
+
+                if (group.id === 5) {shouldShowPair = true;}
+
+                if (groupIds.length < 2) {
+                    shouldShowPair = true;
+                } else if (isFirstGroup && index < middleIndex) {
+                    // Первая группа видит первую половину пар (не включая среднюю)
+                    shouldShowPair = true;
+                } else if (isSecondGroup && index >= middleIndex) {
+                    // Вторая группа видит вторую половину пар (включая среднюю)
+                    shouldShowPair = true;
+                }
+
+                if (shouldShowPair) {
+                    return (
                         <div
                             key={index}
                             className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
@@ -58,29 +75,9 @@ export default function PrayRound({ groupIds = [], roundId }) {
                             <div className="justify-self-center">– и –</div>
                             <div className="justify-self-end font-medium">{allMembers[b]?.name || `#${b}`}</div>
                         </div>
-                    }
-                    {group.id === groupIds[0] && index <= Math.floor(roundPairs.length / 2) && group.id !== 0 &&
-                        <div
-                            key={index}
-                            className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
-                        >
-                            <div className="justify-self-start font-medium">{allMembers[a]?.name || `#${a}`}</div>
-                            <div className="justify-self-center">– и –</div>
-                            <div className="justify-self-end font-medium">{allMembers[b]?.name || `#${b}`}</div>
-                        </div>
-                    }
-                    {group.id === groupIds[1] && index >= Math.floor(roundPairs.length / 2) && group.id !== 0 &&
-                        <div
-                            key={index}
-                            className="grid grid-cols-3 gap-2 items-center justify-between rounded-xl border border-black px-4 py-2 text-xl"
-                        >
-                            <div className="justify-self-start font-medium">{allMembers[a]?.name || `#${a}`}</div>
-                            <div className="justify-self-center">– и –</div>
-                            <div className="justify-self-end font-medium">{allMembers[b]?.name || `#${b}`}</div>
-                        </div>
-                    }
-                </>
-            ))}
+                    );
+                }
+            })}
         </div>
     );
 }

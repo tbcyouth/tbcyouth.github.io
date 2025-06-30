@@ -192,5 +192,19 @@
         "room": "\"Комфорт\" - №4"
       }
     ]
+  },
+  {
+    "id": 5,
+    "login": "ultadmacc",
+    "password": "!1adminspecial1!",
+    "adminpass": "!1adminspecial1!",
+    "name": "Аккаунт",
+    "slug": "gruppa-admina",
+    "members": [
+      {
+        "name": "Админстратор",
+        "room": ""
+      }
+    ]
   }
 ]

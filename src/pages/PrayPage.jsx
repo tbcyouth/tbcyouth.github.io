@@ -96,6 +96,28 @@ export default function QuietTimePage() {
         return Math.floor(Math.random() * questions.length);
     }
 
+    if (group.id === 5) {
+        const allPrayerMeetings = [
+            { title: "Группа Chetillilar (внутри себя)", groupIds: [0] },
+            { title: "Группы 'НЕМО' и 'Икринки'", groupIds: [1, 2] },
+            { title: "Группы 'КПД' и 'GPS'", groupIds: [3, 4] },
+        ];
+
+        return (
+            <div className="container">
+                <ReturnToSchedule />
+                <h1 className="text-3xl font-bold mb-4">Обзор всех пар (Админ)</h1>
+
+                {allPrayerMeetings.map((meeting, index) => (
+                    <div key={index} className="mb-8">
+                        <h3 className="mb-2 font-bold text-2xl">{meeting.title}:</h3>
+                        <PrayRound groupIds={meeting.groupIds} roundId={prayId} />
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
     return (
         <div>
             <div className="container">
