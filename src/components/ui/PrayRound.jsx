@@ -57,7 +57,7 @@ export default function PrayRound({ groupIds = [], roundId }) {
 
                 if (groupIds.length < 2) {
                     shouldShowPair = true;
-                } else if (isFirstGroup && index < middleIndex) {
+                } else if (isFirstGroup && index <= middleIndex) {
                     // Первая группа видит первую половину пар (не включая среднюю)
                     shouldShowPair = true;
                 } else if (isSecondGroup && index >= middleIndex) {

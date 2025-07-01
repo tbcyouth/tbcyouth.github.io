@@ -14,7 +14,7 @@ export default function ScorePage() {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('Инициативность'); // ← по умолчанию
     const [isLoading, setIsLoading] = useState(false);
-    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHKNbhLKcSuXRQx-6jTqaY1AXttbLFJQqFI98WDk3rguwZLP5OpBZnUk4CGC6NdSJWww/exec";
+    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPFM5EQKrwhJf5IN1VG2oPFC-JzLQu6RywEehoHAlhqszbovDOPvmnmv8qfqzwo-P1EQ/exec";
 
     const handleSubmit = () => {
         if (!writer || !targetGroup || !description || !category) {
@@ -139,9 +139,7 @@ ${description}
                 >
                     <option value="">Выберите группу</option>
                     {otherGroups.map((group, index) => (
-                        <option key={index} value={group.name}>
-                            {group.name}
-                        </option>
+                        <option key={index} value={group.name}>{group.name}</option>
                     ))}
                 </select>
             </div>
