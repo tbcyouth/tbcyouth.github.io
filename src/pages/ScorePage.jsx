@@ -138,7 +138,7 @@ ${description}
                     className="w-full px-3 py-2 border border-gray-300 rounded-xl"
                 >
                     <option value="">Выберите группу</option>
-                    {otherGroups.map((group, index) => (
+                    {otherGroups.filter(group => group.name !== "Аккаунт").map((group, index) => (
                         <option key={index} value={group.name}>{group.name}</option>
                     ))}
                 </select>
