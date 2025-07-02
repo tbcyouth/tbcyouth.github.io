@@ -3,6 +3,7 @@ import {Notes, PrayRound, ReturnToSchedule} from "../components";
 import {useState} from "react";
 import {Repeat} from "lucide-react";
 import {getAuthGroup} from "../utils";
+import { Groups } from '../data';
 
 export default function QuietTimePage() {
     const { prayId } = useParams();
@@ -84,9 +85,8 @@ export default function QuietTimePage() {
         4: [3, 4],
     };
 
-    const effectiveGroupIds = mergeMap[group.id] || [group.id];
-
     const [questionId, setQuestionId] = useState(0);
+    const roundIndex = Number(prayId);
 
     if (!group) {
         return <div>не найден</div>;
@@ -95,6 +95,16 @@ export default function QuietTimePage() {
     function randomNumber() {
         return Math.floor(Math.random() * questions.length);
     }
+
+    const getMembersForGroupIds = (ids) => {
+        // Условие для фильтрации группы 0
+        if (ids.length === 1 && ids[0] === 0 && roundIndex > 2) {
+            const tempMembers = Groups[0]?.members || [];
+            return tempMembers.filter(member => member.name !== "Вика" && member.name !== "Милдред");
+        }
+        // Обычный случай
+        return ids.flatMap(id => Groups[id]?.members || []);
+    };
 
     if (group.id === 5) {
         const allPrayerMeetings = [
@@ -108,22 +118,29 @@ export default function QuietTimePage() {
                 <ReturnToSchedule />
                 <h1 className="text-3xl font-bold mb-4">Обзор всех пар (Админ)</h1>
 
-                {allPrayerMeetings.map((meeting, index) => (
-                    <div key={index} className="mb-8">
-                        <h3 className="mb-2 font-bold text-2xl">{meeting.title}:</h3>
-                        <PrayRound groupIds={meeting.groupIds} roundId={prayId} />
-                    </div>
-                ))}
+                {allPrayerMeetings.map((meeting, index) => {
+                    const members = getMembersForGroupIds(meeting.groupIds);
+                    // Добавляем ключевое слово return
+                    return ( 
+                        <div key={index} className="mb-8">
+                            <h3 className="mb-2 font-bold text-2xl">{meeting.title}:</h3>
+                            <PrayRound allMembers={members} groupIds={meeting.groupIds} roundId={prayId} />
+                        </div>
+                    );
+                })}
             </div>
         );
     }
+
+    const effectiveGroupIds = mergeMap[group.id] || [group.id];
+    const currentMembers = getMembersForGroupIds(effectiveGroupIds);
 
     return (
         <div>
             <div className="container">
                 <ReturnToSchedule/>
                 <h3 className="mb-2 font-bold text-2xl">Пары:</h3>
-                <PrayRound groupIds={effectiveGroupIds} roundId={prayId}/>
+                <PrayRound allMembers={currentMembers} groupIds={effectiveGroupIds} roundId={prayId}/>
                 <h3 className="mt-4 mb-2 font-bold text-2xl">Вопросы:</h3>
                 <div className="flex items-start gap-2">
                     <div className="w-full px-4 p-2 text-xl border border-black rounded-xl">{questions[questionId] || "Обнови"}</div>

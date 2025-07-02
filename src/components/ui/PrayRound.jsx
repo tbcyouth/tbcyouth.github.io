@@ -7,8 +7,8 @@ const algorithms = {
         [ [0, 5], [1, 2], [3, 4] ],
         [ [0, 3], [1, 4], [2, 5] ],
         [ [0, 4], [1, 5], [3, 4] ],
-        [ [0, 1], [2, 4], [3, 5] ],
-        [ [0, 2], [1, 3], [4, 5] ],
+        [ [0, 1], [2, 3], [5, 4] ],
+        [ [0, 2], [1, 4], [5, 3] ],
     ],
     8: [
         [ [0, 6], [1, 5], [2, 4], [3, 7] ],
@@ -30,13 +30,10 @@ const algorithms = {
     ],
 };
 
-export default function PrayRound({ groupIds = [], roundId }) {
-    const allMembers = groupIds.flatMap(id => Groups[id].members);
-    const groupSize = allMembers.length;
-
+export default function PrayRound({ allMembers = [], groupIds = [], roundId }) {
     const roundIndex = Number(roundId);
+    const groupSize = allMembers.length;
     const roundPairs = algorithms[groupSize]?.[roundIndex];
-
     const group = getAuthGroup();
 
     if (!roundPairs) {
@@ -64,6 +61,7 @@ export default function PrayRound({ groupIds = [], roundId }) {
                     // Вторая группа видит вторую половину пар (включая среднюю)
                     shouldShowPair = true;
                 }
+                
 
                 if (shouldShowPair) {
                     return (
