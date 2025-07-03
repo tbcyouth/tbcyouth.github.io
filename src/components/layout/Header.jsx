@@ -1,5 +1,5 @@
 import {NavLink, useLocation} from 'react-router-dom';
-import { AlignRight, X, House, Info, ClipboardList, ShieldAlert, Users, LogOut, LogIn, HeartPlus } from 'lucide-react';
+import { AlignRight, X, House, Info, ClipboardList, ShieldAlert, Users, LogOut, LogIn, HeartPlus, Mail } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
@@ -12,7 +12,8 @@ const iconMap = {
     ClipboardList,
     Users,
     ShieldAlert,
-    HeartPlus
+    HeartPlus,
+    Mail
 };
 
 const links = [
@@ -53,9 +54,9 @@ const links = [
         isOpen: false,
     },
     {
-        name: "Вопросы",
-        link: "/question",
-        icon: "HeartPlus",
+        name: "Отзыв",
+        link: "/feedback",
+        icon: "Mail",
         isOpen: false,
     },
 ]

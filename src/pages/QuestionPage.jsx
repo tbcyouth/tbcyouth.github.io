@@ -1,21 +1,25 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { Input, Textarea } from "../components";
-import {getAuthGroup, sendMessage} from "../utils";
+import { Textarea } from "../components";
+import { sendMessage } from "../utils";
 
 export default function QuestionPage() {
     const [msg, setMsg] = useState('');
-    const auth = getAuthGroup();
+    let [nm, setNm] = useState('');
 
     const handleSubmit = () => {
         if (!msg) {
             Swal.fire("Ошибка", "Пожалуйста, введите вопрос", "error");
             return;
         }
+        if (!nm) {
+            nm = "Не указано :(";
+        }
 
         const message = `
 <b>АНОНИМНЫЙ ВОПРОС</b>
-<b>Группа: </b> ${auth.name}
+<b></b>
+<b>Имя: </b> ${nm}
 <b></b> 
 <b>Вопрос:</b> 
 ${msg}
@@ -30,8 +34,9 @@ ${msg}
             confirmButtonColor: "#000",
         }).then((res) => {
             if (res.isConfirmed) {
-                sendMessage(message)
-                setMsg("")
+                sendMessage(message);
+                setMsg("");
+                setNm("");
 
             Swal.fire({
                 title: "Успешно!",
@@ -44,15 +49,24 @@ ${msg}
     };
 
     return (
-        <div className="container">
+        <div className="container max-w-xl mx-auto py-8">
             <h1 className="text-2xl font-bold mb-4">Вопросы:</h1>
+            <div className="mb-2">
+                <Textarea
+                    label="Имя (по желанию)"
+                    value={nm}
+                    onChange={(e) => setNm(e.target.value)}
+                    id="nm"
+                    name="nm"
+                />
+            </div>
             <div className="mb-4">
-            <Textarea
-                    label=""
+                <Textarea
+                    label="Ваш вопрос"
                     value={msg}
                     onChange={(e) => setMsg(e.target.value)}
-                    id="description"
-                    name="description"
+                    id="question"
+                    name="question"
                 />
             </div>
 

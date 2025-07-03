@@ -93,7 +93,7 @@ export default function FeedbackPage() {
             <h1 className="text-2xl font-bold">Понравился семинар?</h1>
             <p className="mb-6">Напиши отзыв о данном семинаре!</p>
 
-            <div className="mb-6">
+            <div className="mb-4">
                 <h5 className="font-medium mb-2">Ваше ФИО</h5>
                 <Input
                     label="ФИО"
@@ -105,7 +105,7 @@ export default function FeedbackPage() {
             </div>
 
             {questions.map((question, index) => (
-                <div className="mb-6" key={index}>
+                <div className="mb-4" key={index}>
                     <h5 className="font-medium mb-2">{question}</h5>
                     <Textarea
                         label="Ваш ответ"
