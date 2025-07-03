@@ -9,3 +9,4 @@ export { default as Feedback } from './FeedbackPage';
 export { default as Pray } from './PrayPage';
 export { default as Rule } from './RulePage';
 export { default as Score } from './ScorePage';
+export { default as QuestionPage } from './QuestionPage';

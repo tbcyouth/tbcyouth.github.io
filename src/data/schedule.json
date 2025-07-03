@@ -637,7 +637,8 @@
     {
       "time": "12:20",
       "title": "Вопрос - ответ",
-      "color": "red"
+      "color": "red",
+      "link": "/question"
     },
     {
       "time": "13:30",
