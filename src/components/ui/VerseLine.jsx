@@ -12,16 +12,20 @@ const verseGroups = [
     [Verses[17], Verses[18]], // Группа из 2 стихов
 ];
 
+const days = [28, 29, 30, 1, 2, 3, 4];
+let todaysVerseGroup;
+
 export default function VerseLine() {
     const [verse, setVerse] = useState(null);
 
     useEffect(() => {
-        const now = new Date();
-        const currentHour = now.getHours();
-
-        const dayNumber = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-        const dailyGroupIndex = dayNumber % verseGroups.length;
-        const todaysVerseGroup = verseGroups[dailyGroupIndex];
+        const nowDay = new Date().getDate();
+        for (let i = 0; i < 7; i++) {
+            if (days[i] === Number(nowDay)) {
+                todaysVerseGroup = verseGroups[i];
+            }
+        }
+        const currentHour = new Date().getHours();
 
         let verseToShow;
 
