@@ -48,6 +48,10 @@ ${description}
             confirmButtonColor: "#000",
         }).then((res) => {
             if (res.isConfirmed) {
+                sendMessage(message);
+                setCategory("");
+                setTargetGroup("");
+                setDescription("");
                 setIsLoading(true);
 
                 const payload = {

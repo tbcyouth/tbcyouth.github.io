@@ -3,44 +3,38 @@ import { formatVerse } from "../../utils";
 import { Verses } from "../../data";
 
 const verseGroups = [
-    [Verses[0], Verses[1]], // Группа из 2 стихов
-    [Verses[2], Verses[3], Verses[4]], // Группа из 3 стихов
-    [Verses[5], Verses[6], Verses[7]], // Группа из 3 стихов
-    [Verses[8], Verses[9], Verses[10]], // Группа из 3 стихов
-    [Verses[11], Verses[12], Verses[13]], // Группа из 3 стихов
-    [Verses[14], Verses[15], Verses[16]], // Группа из 3 стихов
-    [Verses[17], Verses[18]], // Группа из 2 стихов
+    [Verses[0], Verses[1]],
+    [Verses[2], Verses[3], Verses[4]],
+    [Verses[5], Verses[6], Verses[7]],
+    [Verses[8], Verses[9], Verses[10]],
+    [Verses[11], Verses[12], Verses[13]],
+    [Verses[14], Verses[15], Verses[16]],
+    [Verses[17], Verses[18]]
 ];
 
-const days = [28, 29, 30, 1, 2, 3, 4];
-let todaysVerseGroup;
+const dates = [28.5, 29.5, 30.5, 1.6, 2.6, 3.6, 4.6];
+let todaysVerseGroup = [Verses[19]];
 
 export default function VerseLine() {
     const [verse, setVerse] = useState(null);
 
     useEffect(() => {
-        const nowDay = new Date().getDate();
+        const nowDate = new Date().getDate() + "." + new Date().getMonth();
+        const currentHour = new Date().getHours();
+        let verseToShow;
+
         for (let i = 0; i < 7; i++) {
-            if (days[i] === Number(nowDay)) {
+            if (dates[i] === Number(nowDate)) {
                 todaysVerseGroup = verseGroups[i];
             }
         }
-        const currentHour = new Date().getHours();
-
-        let verseToShow;
 
         if (currentHour >= 7 && currentHour < 13) {
-            // Период 1: с 7:00 до 12:59
-            // Показываем первый стих в группе
             verseToShow = todaysVerseGroup[0];
         } else if (currentHour >= 13 && currentHour < 18) {
-            // Период 2: с 13:00 до 17:59
-            // Показываем второй стих. Если в группе его нет, показываем первый.
             verseToShow = todaysVerseGroup[1] || todaysVerseGroup[0];
         } else {
-            // Период 3: вечер и ночь (с 18:00 до 6:59 следующего дня)
-            // Показываем третий стих. Если его нет, показываем последний доступный в группе.
-            verseToShow = todaysVerseGroup[2] || todaysVerseGroup[todaysVerseGroup.length - 1];
+            verseToShow = todaysVerseGroup[2] || todaysVerseGroup[1] || todaysVerseGroup[0];
         }
 
         setVerse(verseToShow);

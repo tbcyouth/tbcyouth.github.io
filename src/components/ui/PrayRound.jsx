@@ -1,7 +1,5 @@
-import { Groups } from "../../data";
 import {getAuthGroup} from "../../utils";
 
-// 🔁 Новый формат: массив массивов пар [a, b], порядок сохраняется
 const algorithms = {
     6: [
         [ [0, 5], [1, 2], [3, 4] ],
@@ -65,10 +63,8 @@ export default function PrayRound({ allMembers = [], groupIds = [], roundId }) {
                 if (groupIds.length < 2) {
                     shouldShowPair = true;
                 } else if (isFirstGroup && index <= middleIndex) {
-                    // Первая группа видит первую половину пар (не включая среднюю)
                     shouldShowPair = true;
                 } else if (isSecondGroup && index >= middleIndex) {
-                    // Вторая группа видит вторую половину пар (включая среднюю)
                     shouldShowPair = true;
                 }
                 
