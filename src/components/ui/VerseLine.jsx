@@ -3,17 +3,14 @@ import { formatVerse } from "../../utils";
 import { Verses } from "../../data";
 
 const verseGroups = [
-    [Verses[0], Verses[1]],
-    [Verses[2], Verses[3], Verses[4]],
-    [Verses[5], Verses[6], Verses[7]],
-    [Verses[8], Verses[9], Verses[10]],
-    [Verses[11], Verses[12], Verses[13]],
-    [Verses[14], Verses[15], Verses[16]],
-    [Verses[17], Verses[18]]
+    [Verses[0]],
+    [Verses[1], Verses[2], Verses[3]],
+    [Verses[4], Verses[5], Verses[6]],
+    [Verses[7], Verses[8]]
 ];
 
-const dates = [28.5, 29.5, 30.5, 1.6, 2.6, 3.6, 4.6];
-let todaysVerseGroup = [Verses[19]];
+const dates = [2.1, 3.1, 4.1, 5.1];
+let todaysVerseGroup = [Verses[0]];
 
 export default function VerseLine() {
     const [verse, setVerse] = useState(null);
