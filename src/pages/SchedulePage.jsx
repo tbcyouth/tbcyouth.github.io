@@ -14,13 +14,13 @@ export default function SchedulePage() {
     const day = days[today - firstDay + +dayPosition];
     const admin = isAdmin()
 
-    if (+dayPosition < 7) {
-        return (
-            <div className="container text-3xl mx-auto py-6 text-center mt-20">
-                Семинар закончился, ждите следующего :)
-            </div>
-        );
-    }
+    // if (+dayPosition < 7) {
+    //     return (
+    //         <div className="container text-3xl mx-auto py-6 text-center mt-20">
+    //             Семинар закончился, ждите следующего :)
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="container">
