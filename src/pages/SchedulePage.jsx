@@ -6,7 +6,7 @@ import {getDayOfYear, isAdmin} from "../utils";
 
 const days = Schedule;
 
-const firstDay = getDayOfYear(new Date(2025, 5, 28))
+const firstDay = getDayOfYear(new Date(2025, 11, 27))
 const today = getDayOfYear(new Date())
 
 export default function SchedulePage() {
