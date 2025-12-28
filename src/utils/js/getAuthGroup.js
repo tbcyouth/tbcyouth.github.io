@@ -8,7 +8,7 @@ export function getAuthGroup() {
 }
 
 export function isAdmin() {
-    return localStorage.getItem("isAdmin") === "true";
+    return localStorage.getItem("isAdmin") === "zXsdjkck-23nsj22-lasd-222jd-pqpw";
 }
 
 export function logout() {

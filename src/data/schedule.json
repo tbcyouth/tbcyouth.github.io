@@ -13,18 +13,18 @@
     {
       "time": " 9:40",
       "title": "Прославление",
-      "color": "orange"
+      "color": "lilac"
     },
     {
       "time": "10:00",
-      "title": "Служение/Правила",
-      "color": "orange",
-      "link": "/rules"
+      "title": "Служение / Правила",
+      "color": "lilac",
+      "link": "/rule"
     },
     {
       "time": "11:00",
       "title": "Расселение",
-      "color": "gray"
+      "color": "white"
     },
     {
       "time": "11:20",
@@ -55,19 +55,19 @@
     {
       "time": "15:00",
       "title": "Свободное время",
-      "color": "gray"
+      "color": "white"
     },
     {
       "time": "16:20",
       "title": "Группа: Урок 1",
       "color": "yellow",
-      "link": "/lesson/1"
+      "link": "/lesson/0"
     },
     {
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 1
+      "verseIndex": 0
     },
     {
       "time": "18:40",
@@ -83,7 +83,7 @@
     {
       "time": "20:00",
       "title": "Свободное время",
-      "color": "gray"
+      "color": "white"
     },
     {
       "time": "21:00",
@@ -135,7 +135,7 @@
       "time": " 9:00",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 2
+      "verseIndex": 1
     },
     {
       "time": " 9:10",
@@ -150,12 +150,12 @@
     {
       "time": "10:00",
       "title": "Прославление",
-      "color": "orange"
+      "color": "lilac"
     },
     {
       "time": "10:20",
       "title": "Лекция",
-      "color": "orange"
+      "color": "lilac"
     },
     {
       "time": "11:00",
@@ -166,13 +166,13 @@
       "time": "11:50",
       "title": "Группа: Урок 2",
       "color": "yellow",
-      "link": "/lesson/2"
+      "link": "/lesson/1"
     },
     {
-      "time": "13:30",
+      "time": "13:50",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 3
+      "verseIndex": 2
     },
     {
       "time": "14:00",
@@ -194,13 +194,13 @@
       "time": "16:20",
       "title": "Группа: Урок 3",
       "color": "yellow",
-      "link": "/lesson/3"
+      "link": "/lesson/2"
     },
     {
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 4
+      "verseIndex": 3
     },
     {
       "time": "18:40",
@@ -211,7 +211,7 @@
       "time": "19:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pray/2"
+      "link": "/pray/3"
     },
     {
       "time": "20:00",
@@ -244,41 +244,41 @@
 
   [
     {
-      "time": " 8:30",
+      "time": " 8:00",
       "title": "Подъем",
       "color": "white"
     },
     {
-      "time": " 9:00",
+      "time": " 8:00",
       "title": "Водные процедуры",
       "color": "white"
     },
     {
-      "time": " 9:10",
+      "time": " 8:30",
       "title": "Группа: Тихое время",
       "color": "yellow",
-      "link": "/quiet-time/3"
+      "link": "/quiet-time/2"
+    },
+    {
+      "time": " 9:00",
+      "title": "Стих",
+      "color": "yellow",
+      "verseIndex": 4
+    },
+    {
+      "time": " 9:10",
+      "title": "Завтрак",
+      "color": "red"
     },
     {
       "time": " 9:40",
-      "title": "Стих",
-      "color": "yellow",
-      "verseIndex": 5
-    },
-    {
-      "time": " 9:50",
-      "title": "Завтрак",
-      "color": "purple"
-    },
-    {
-      "time": "10:20",
-      "title": "Вопрос ответ",
-      "color": "red"
-    },
-    {
-      "time": "11:30",
       "title": "Перерыв",
-      "color": "red"
+      "color": "gray"
+    },
+    {
+      "time": "10:00",
+      "title": "Воскресное служение",
+      "color": "lilac"
     },
     {
       "time": "12:00",
@@ -290,18 +290,18 @@
       "time": "13:50",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 6
+      "verseIndex": 5
     },
     {
       "time": "14:00",
       "title": "Обед",
-      "color": "purple"
+      "color": "red"
     },
     {
       "time": "14:40",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pray/2"
+      "link": "/pray/4"
     },
     {
       "time": "15:00",
@@ -311,24 +311,24 @@
     {
       "time": "16:00",
       "title": "Сюрприз",
-      "color": "yellow"
+      "color": "blue"
     },
     {
       "time": "18:30",
       "title": "Стих",
       "color": "yellow",
-      "verseIndex": 7
+      "verseIndex": 6
     },
     {
       "time": "18:40",
       "title": "Ужин",
-      "color": "purple"
+      "color": "red"
     },
     {
-      "time": "14:40",
+      "time": "19:30",
       "title": "Парная молитва",
       "color": "green",
-      "link": "/pray/2"
+      "link": "/pray/5"
     },
     {
       "time": "20:00",
@@ -357,123 +357,90 @@
   [
     {
       "time": " 8:00",
+      "title": "Спим",
+      "color": "white"
+    },
+    {
+      "time": " 8:30",
       "title": "Подъем",
       "color": "white"
     },
     {
-      "time": " 8:00",
+      "time": " 9:00",
       "title": "Водные процедуры",
       "color": "white"
     },
     {
-      "time": " 8:20",
-      "title": "Зарядка",
-      "color": "green"
-    },
-    {
-      "time": " 8:30",
+      "time": " 9:10",
       "title": "Группа: Тихое время",
       "color": "yellow",
       "link": "/quiet-time/3"
     },
     {
-      "time": " 9:00",
+      "time": " 9:40",
+      "title": "Стих",
+      "color": "yellow",
+      "verseIndex": 7
+    },
+    {
+      "time": " 9:50",
+      "title": "Завтрак",
+      "color": "red"
+    },
+    {
+      "time": "10:20",
+      "title": "Вопрос - Ответ",
+      "color": "blue"
+    },
+    {
+      "time": "11:30",
+      "title": "Перерыв",
+      "color": "gray"
+    },
+    {
+      "time": "12:00",
+      "title": "Прославление",
+      "color": "lilac"
+    },
+    {
+      "time": "12:20",
+      "title": "Служение",
+      "color": "lilac"
+    },
+    {
+      "time": "13:00",
+      "title": "Свидетельство",
+      "color": "lilac"
+    },
+    {
+      "time": "13:30",
+      "title": "Фото",
+      "color": "white"
+    },
+    {
+      "time": "13:50",
+      "title": "Группа: Обсуждение",
+      "color": "yellow"
+    },
+    {
+      "time": "15:20",
       "title": "Стих",
       "color": "yellow",
       "verseIndex": 8
     },
     {
-      "time": " 9:10",
-      "title": "Завтрак",
-      "color": "purple"
-    },
-    {
-      "time": " 9:40",
-      "title": "Перерыв",
-      "color": "gray"
-    },
-    {
-      "time": "10:00",
-      "title": "Прославление",
-      "color": "red"
-    },
-    {
-      "time": "10:20",
-      "title": "Лекция",
-      "color": "red"
-    },
-    {
-      "time": "11:00",
-      "title": "Свободное время",
-      "color": "white"
-    },
-    {
-      "time": "12:20",
-      "title": "Интерактив",
-      "color": "red"
-    },
-    {
-      "time": "13:30",
-      "title": "Стих",
-      "color": "yellow",
-      "verseIndex": 9
-    },
-    {
-      "time": "13:50",
+      "time": "15:30",
       "title": "Обед",
-      "color": "purple"
+      "color": "red"
     },
     {
-      "time": "14:30",
-      "title": "Парная молитва",
-      "color": "green",
-      "link": "/pray/1"
-    },
-    {
-      "time": "15:00",
-      "title": "Свободное время",
+      "time": "16:20",
+      "title": "Сбор",
       "color": "white"
     },
     {
       "time": "17:00",
-      "title": "Группа: Урок 4",
-      "color": "yellow",
-      "link": "/lesson/4"
-    },
-    {
-      "time": "18:30",
-      "title": "Стих",
-      "color": "yellow",
-      "verseIndex": 10
-    },
-    {
-      "time": "18:50",
-      "title": "Ужин",
-      "color": "purple"
-    },
-    {
-      "time": "19:30",
-      "title": "Свободное время",
-      "color": "white"
-    },
-    {
-      "time": "21:00",
-      "title": "Фильм",
-      "color": "blue"
-    },
-    {
-      "time": "22:20",
-      "title": "Призы",
-      "color": "blue"
-    },
-    {
-      "time": "22:30",
-      "title": "Ночной дожер",
-      "color": "purple"
-    },
-    {
-      "time": "23:00",
-      "title": "Сон",
+      "title": "Выезд",
       "color": "white"
     }
   ]

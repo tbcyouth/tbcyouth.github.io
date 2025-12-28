@@ -1,9 +1,9 @@
 [
   {
     "id": 0,
-    "login": "temp_1",
-    "password": "temp_1",
-    "adminpass": "Adm!!temp_1!!",
+    "login": "GodIsLove",
+    "password": "veranda999",
+    "adminpass": "Adm!!veranda999!!",
     "name": "Группа Мунира x Марк",
     "slug": "gruppa-munira-mark",
     "members": [
@@ -20,7 +20,7 @@
         "room": "Детская - 2"
       },
       {
-        "name": "Даша",
+        "name": "Даша С.",
         "room": "Большая спальня"
       },
       {
@@ -39,9 +39,9 @@
   },
   {
     "id": 1,
-    "login": "temp_2",
-    "password": "temp_2",
-    "adminpass": "Adm!!temp_2!!",
+    "login": "ChristTeam",
+    "password": "12345678910",
+    "adminpass": "Adm!!12345678910!!",
     "name": "Группа Игорь x Даша",
     "slug": "gruppa-igor-dasha",
     "members": [
@@ -72,6 +72,10 @@
       {
         "name": "Эдвард",
         "room": "Детская - 1"
+      },
+      {
+        "name": "Лёша",
+        "room": "Малая спальня"
       }
     ]
   },
@@ -115,9 +119,9 @@
   },
   {
     "id": 3,
-    "login": "temp_4",
-    "password": "temp_4",
-    "adminpass": "Adm!!temp_4!!",
+    "login": "Юлики",
+    "password": "Forever",
+    "adminpass": "Adm!!Forever!!",
     "name": "Группа Юля x Олег",
     "slug": "gruppa-yulya-oleg",
     "members": [
@@ -138,7 +142,7 @@
         "room": "Большая спальня"
       },
       {
-        "name": "Андрей",
+        "name": "Андрей Ц.",
         "room": "Малая спальня"
       },
       {
@@ -188,16 +192,16 @@
         "room": "Большая спальня"
       },
       {
-        "name": "Андрей",
+        "name": "Андрей К.",
         "room": "Малая спальня"
       }
     ]
   },
   {
     "id": 5,
-    "login": "temp_6",
-    "password": "temp_6",
-    "adminpass": "Adm!!temp_6!!",
+    "login": "Рай",
+    "password": "Иисус",
+    "adminpass": "Adm!!Иисус!!",
     "name": "Группа Аня x Вера",
     "slug": "gruppa-anya-vera",
     "members": [
@@ -226,16 +230,16 @@
         "room": "Большая спальня"
       },
       {
-        "name": "Андрей",
+        "name": "Андрей К.",
         "room": "Детская - 1"
       }
     ]
   },
   {
     "id": 6,
-    "login": "temp_7",
-    "password": "temp_7",
-    "adminpass": "Adm!!temp_7!!",
+    "login": "Mimimi",
+    "password": "1234",
+    "adminpass": "Adm!!1234!!",
     "name": "Группа Саша x Юханно",
     "slug": "gruppa-sahsa-yuhanno",
     "members": [
@@ -274,8 +278,8 @@
     "login": "ultadmacc",
     "password": "!1adminspecial1!",
     "adminpass": "!1adminspecial1!",
-    "name": "Аккаунт",
-    "slug": "gruppa-admina",
+    "name": "Админстратор",
+    "slug": "admin",
     "members": [
       {
         "name": "Админстратор",

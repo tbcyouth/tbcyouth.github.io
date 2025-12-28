@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import {formatVerse} from "../../utils";
 import {Verses} from "../../data";
 
-
 export default function ScheduleItem({
                                          title,
                                          time,
@@ -22,11 +21,20 @@ export default function ScheduleItem({
         green: "#C6FFCC",
         purple: "#F4C6FF",
         blue: "#C6F2FF",
-        gray: "#E8E8E8"
+        gray: "#E8E8E8",
+        lilac: "#EAD1DC"
     }
 
+    // 1. Безопасно получаем данные стиха
+    // Если verseIndex нет или стиха с таким индексом нет в массиве, будет undefined
+    const currentVerse = (verseIndex !== undefined && verseIndex !== null) 
+        ? Verses?.[verseIndex] 
+        : null;
+
     const [isOpen, setIsOpen] = useState(false);
-    const isSpoiler = !!verseIndex?.toString(); // true если есть контент
+    
+    // 2. Логика спойлера: это спойлер, ТОЛЬКО если передан индекс
+    const isSpoiler = verseIndex !== undefined && verseIndex !== null;
 
     const toggleSpoiler = () => {
         if (isSpoiler) {
@@ -42,28 +50,23 @@ export default function ScheduleItem({
                 onClick={toggleSpoiler}
                 className="w-full flex items-center gap-4 p-1 pl-3 text-left min-h-12"
             >
-                <div className="font-mono text-gray-500 text-lg">{time}{!!verseIndex}</div>
+                <div className="font-mono text-gray-500 text-lg">{time}</div>
                 <div className="flex-auto font-medium text-xl">{title}</div>
 
-
-                    {!!isSpoiler ? (
-                        <div
-                            className={clsx(
-                                "border border-black rounded-xl p-2",
-                            )}
-                        >
-                            <ChevronRight className={clsx(
-                                "transform transition-transform duration-300",
-                                isOpen && "rotate-90"
-                            )}/>
-                        </div>
-                    ) : !!link ? (
-                        <Link to={link} className="border border-black rounded-xl p-2">
-                            <ArrowRight/>
-                        </Link>
-                    ):(
-                        <div className=""></div>
-                    )}
+                {isSpoiler ? (
+                    <div className={clsx("border border-black rounded-xl p-2")}>
+                        <ChevronRight className={clsx(
+                            "transform transition-transform duration-300",
+                            isOpen && "rotate-90"
+                        )}/>
+                    </div>
+                ) : link ? (
+                    <Link to={link} className="border border-black rounded-xl p-2">
+                        <ArrowRight/>
+                    </Link>
+                ) : (
+                    <div className=""></div>
+                )}
             </Wrapper>
 
             {isSpoiler && (
@@ -73,8 +76,20 @@ export default function ScheduleItem({
                         isOpen ? "max-h-96 py-3 border-t border-black" : "max-h-0 py-0 border-none"
                     )}
                 >
-                    <div className="font-semibold">{Verses[verseIndex].link}</div>
-                    <div className="text-lg">{formatVerse(Verses[verseIndex].content)}</div>
+                    {/* 3. ГЛАВНОЕ ИСПРАВЛЕНИЕ: Проверяем, существует ли currentVerse перед рендером */}
+                    {currentVerse ? (
+                        <>
+                            <div className="font-semibold">{currentVerse.link || "Ссылка отсутствует"}</div>
+                            <div className="text-lg">
+                                {/* Доп. защита для функции форматирования */}
+                                {currentVerse.content ? formatVerse(currentVerse.content) : "Текст отсутствует"}
+                            </div>
+                        </>
+                    ) : (
+                        <div className="text-red-500 py-2">
+                            Ошибка: Стих #{verseIndex} не найден в базе данных!
+                        </div>
+                    )}
                 </div>
             )}
         </div>

@@ -78,11 +78,13 @@ export default function QuietTimePage() {
 
 
     const mergeMap = {
-        0: [0],
-        1: [1, 2],
-        2: [1, 2],
-        3: [3, 4],
-        4: [3, 4],
+        0: [0, 2],
+        1: [1],
+        2: [0, 2],
+        3: [3],
+        4: [4, 6],
+        5: [5, 6],
+        6: [5, 6],
     };
 
     const [questionId, setQuestionId] = useState(0);
@@ -106,7 +108,7 @@ export default function QuietTimePage() {
         return ids.flatMap(id => Groups[id]?.members || []);
     };
 
-    if (group.id === 5) {
+    if (group.id === 7) {
         const allPrayerMeetings = [
             { title: "Группа Chetillilar (внутри себя)", groupIds: [0] },
             { title: "Группы 'НЕМО' и 'Икринки'", groupIds: [1, 2] },
