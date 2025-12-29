@@ -22,23 +22,6 @@ export default function ScorePage() {
             return;
         }
 
-        const message = `
-<b>💬 ОЦЕНКА</b>
-
-<b>От кого:</b> ${groupData.name}
-<b>Кто пишет:</b> ${writer}
-<b>Про кого:</b> ${targetGroup}
-<b>Категория:</b> ${category}
-
-<b>Кто и что сделал?</b> 
-${description}
-
-#оценка_день_${new Date().getDate()}
-#оценка_${category.replace(/\s+/g, '').toLowerCase()}_${new Date().getDate()}
-#оценка_${targetGroup.replace(/\s+/g, '').toLowerCase()}_${new Date().getDate()}
-#оценка_${category.replace(/\s+/g, '').toLowerCase()}_${targetGroup.replace(/\s+/g, '').toLowerCase()}_${new Date().getDate()}
-        `;
-
         Swal.fire({
             title: "Отправить данные?",
             icon: "question",
@@ -48,7 +31,6 @@ ${description}
             confirmButtonColor: "#000",
         }).then((res) => {
             if (res.isConfirmed) {
-                sendMessage(message);
                 setCategory("");
                 setTargetGroup("");
                 setDescription("");
@@ -140,8 +122,7 @@ ${description}
                     onChange={(e) => setTargetGroup(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-xl"
                 >
-                    <option value="">Выберите группу</option>
-                    {otherGroups.filter(group => group.name !== "Аккаунт").map((group, index) => (
+                    {otherGroups.filter(group => group.name !== "Админстратор").map((group, index) => (
                         <option key={index} value={group.name}>{group.name}</option>
                     ))}
                 </select>

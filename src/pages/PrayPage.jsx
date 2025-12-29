@@ -83,9 +83,9 @@ export default function QuietTimePage() {
         1: [1],
         2: [0, 2],
         3: [3],
-        4: [4, 5],
-        5: [4, 5],
-        6: [6],
+        4: [4],
+        5: [5, 6],
+        6: [5, 6],
     };
 
     const [questionId, setQuestionId] = useState(0);
@@ -115,8 +115,8 @@ export default function QuietTimePage() {
             { title: "Группы МхМ и ТхР", groupIds: [0, 2] },
             { title: "Группа ИхД", groupIds: [1] },
             { title: "Группа ЮхО", groupIds: [3] },
-            { title: "Группы КхС и АхВ", groupIds: [4, 5] },
-            { title: "Группа СхЮ", groupIds: [6] },
+            { title: "Группы КхС", groupIds: [4] },
+            { title: "Группа АхВ х СхЮ", groupIds: [5, 6] },
         ];
 
         return (
