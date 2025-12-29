@@ -4,9 +4,8 @@ import { ScheduleItem } from "../components";
 import { Schedule } from "../data";
 import { isAdmin } from "../utils";
 
-// 1. Исправляем дату начала (11 = Декабрь)
 // Используем timestamp для точного расчета разницы дней
-const START_DATE = new Date(2025, 11, 27); // 27 Декабря 2025
+const START_DATE = new Date(2026, 0, 2);
 
 const getDayDiff = () => {
     const now = new Date();
