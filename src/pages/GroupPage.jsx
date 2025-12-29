@@ -24,7 +24,10 @@ export default function GroupPage() {
 
                             <h2 className="text-xl mt-6 mb-3 font-medium">Участники:</h2>
                         </>
-                            :
+                    : member.name === "..." ?
+                        <div className="">
+                        </div>
+                    :
                         <div className="flex justify-between border border-black rounded-xl p-2 mb-2">
                             <div className="">{member.name}</div>
                             <div className="text-gray-500">{member.room}</div>
