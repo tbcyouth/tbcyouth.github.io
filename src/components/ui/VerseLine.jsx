@@ -9,7 +9,7 @@ const verseGroups = [
     [Verses[7], Verses[8]]
 ];
 
-const dates = [28.12, 29.12, 30.12, 31.12];
+const dates = [1.1, 2.1, 3.1, 4.1];
 let todaysVerseGroup = [Verses[0]];
 
 export default function VerseLine() {

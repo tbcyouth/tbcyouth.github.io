@@ -81,9 +81,9 @@
   },
   {
     "id": 2,
-    "login": "temp_3",
-    "password": "temp_3",
-    "adminpass": "Adm!!temp_3!!",
+    "login": "Толик",
+    "password": "Ривко",
+    "adminpass": "Adm!!Ривко!!",
     "name": "Группа Толик x Ривко",
     "slug": "gruppa-tolik-rivko",
     "members": [
@@ -161,9 +161,9 @@
   },
   {
     "id": 4,
-    "login": "temp_5",
-    "password": "temp_5",
-    "adminpass": "Adm!!temp_5!!",
+    "login": "CampVibes",
+    "password": "let'sgoteam",
+    "adminpass": "Adm!!let'sgoteam!!",
     "name": "Группа Крис x Стас",
     "slug": "gruppa-kris-stas",
     "members": [
