@@ -112,10 +112,10 @@ export default function QuietTimePage() {
 
     if (group.id === 7) {
         const allPrayerMeetings = [
-            { title: "Группы МхМ и ТхР", groupIds: [0, 2] },
-            { title: "Группа ИхД", groupIds: [1] },
-            { title: "Группа ЮхО х КхС", groupIds: [3, 4] },
-            { title: "Группы АхВ х СхЮ", groupIds: [5, 6] },
+            { title: "Группы GodIsPower и ИБТ", groupIds: [0, 2] },
+            { title: "Группа Ч.С.В.", groupIds: [1] },
+            { title: "Группа ДВСИ х Милашки", groupIds: [3, 4] },
+            { title: "Группы Небезгрешные х K-Plove", groupIds: [5, 6] },
         ];
 
         return (
