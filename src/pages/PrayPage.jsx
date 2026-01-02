@@ -82,10 +82,10 @@ export default function QuietTimePage() {
         0: [0, 2],
         1: [1],
         2: [0, 2],
-        3: [3],
-        4: [4, 6],
-        5: [5],
-        6: [4, 6],
+        3: [3, 4],
+        4: [3, 4],
+        5: [5, 6],
+        6: [5, 6]
     };
 
     const [questionId, setQuestionId] = useState(0);
@@ -114,9 +114,8 @@ export default function QuietTimePage() {
         const allPrayerMeetings = [
             { title: "Группы МхМ и ТхР", groupIds: [0, 2] },
             { title: "Группа ИхД", groupIds: [1] },
-            { title: "Группа ЮхО", groupIds: [3] },
-            { title: "Группы КхС х СхЮ", groupIds: [4, 6] },
-            { title: "Группа АхВ", groupIds: [5] },
+            { title: "Группа ЮхО х КхС", groupIds: [3, 4] },
+            { title: "Группы АхВ х СхЮ", groupIds: [5, 6] },
         ];
 
         return (
