@@ -14,30 +14,13 @@ export default function ScorePage() {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('Инициативность'); // ← по умолчанию
     const [isLoading, setIsLoading] = useState(false);
-    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby75qEgVWuDfr7DNTBIwYCvgNVfAffB3rEKcyX9qUAdc6WbZK7sUr-nglxO2KVRtJM9pQ/exec";
+    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzZ1V38MeJpRhOEzYAbw4zfJ32EfVLwv9vT3Ibozefy_YH7H62pB8gMagT_a0U9PZa7/exec";
 
     const handleSubmit = () => {
         if (!writer || !targetGroup || !description || !category) {
             Swal.fire("Ошибка", "Пожалуйста, заполните все поля", "error");
             return;
         }
-
-        const message = `
-<b>💬 ОЦЕНКА</b>
-
-<b>От кого:</b> ${groupData.name}
-<b>Кто пишет:</b> ${writer}
-<b>Про кого:</b> ${targetGroup}
-<b>Категория:</b> ${category}
-
-<b>Кто и что сделал?</b> 
-${description}
-
-#оценка_день_${new Date().getDate()}
-#оценка_${category.replace(/\s+/g, '').toLowerCase()}_${new Date().getDate()}
-#оценка_${targetGroup.replace(/\s+/g, '').toLowerCase()}_${new Date().getDate()}
-#оценка_${category.replace(/\s+/g, '').toLowerCase()}_${targetGroup.replace(/\s+/g, '').toLowerCase()}_${new Date().getDate()}
-        `;
 
         Swal.fire({
             title: "Отправить данные?",
@@ -48,7 +31,6 @@ ${description}
             confirmButtonColor: "#000",
         }).then((res) => {
             if (res.isConfirmed) {
-                sendMessage(message);
                 setCategory("");
                 setTargetGroup("");
                 setDescription("");
@@ -65,11 +47,10 @@ ${description}
                 // Отправляем POST-запрос на URL нашего Google Apps Script
                 fetch(GOOGLE_APP_SCRIPT_URL, {
                     method: 'POST',
-                    // ВАЖНО: Apps Script требует особого формата для POST, поэтому обходной путь с redirect и text/plain
-                    mode: 'no-cors', // Для обхода некоторых CORS-ограничений при простом POST
-                    redirect: 'follow',
+                    mode: 'no-cors',
                     headers: {
-                        // Content-Type убираем, так как Apps Script будет ругаться на 'application/json' с CORS
+                        // Явно указываем, что шлем текст (GAS лучше это понимает)
+                        'Content-Type': 'text/plain;charset=utf-8', 
                     },
                     body: JSON.stringify(payload),
                 })
@@ -141,8 +122,7 @@ ${description}
                     onChange={(e) => setTargetGroup(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-xl"
                 >
-                    <option value="">Выберите группу</option>
-                    {otherGroups.filter(group => group.name !== "Аккаунт").map((group, index) => (
+                    {otherGroups.filter(group => group.name !== "Админстратор").map((group, index) => (
                         <option key={index} value={group.name}>{group.name}</option>
                     ))}
                 </select>

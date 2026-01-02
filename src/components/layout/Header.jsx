@@ -53,12 +53,12 @@ const links = [
         icon: "HeartPlus",
         isOpen: false,
     },
-    {
-        name: "Отзыв",
-        link: "/feedback",
-        icon: "Mail",
-        isOpen: false,
-    },
+    // {
+    //     name: "Отзыв",
+    //     link: "/feedback",
+    //     icon: "Mail",
+    //     isOpen: false,
+    // },
 ]
 
 export default function Header({ title = "Title is empty", group = "Добро пожаловать" }) {
@@ -73,10 +73,10 @@ export default function Header({ title = "Title is empty", group = "Добро �
         '/contact': 'Контакты',
         '/login': 'Войти',
         '/group': 'Моя группа',
-        '/feedback': 'Отзыв',
+        // '/feedback': 'Отзыв',
         '/rule': 'Правила',
         '/score': 'Оценка',
-        '/question': 'Вопросы',
+        // '/question': 'Вопросы',
     };
 
     let currentTitle = pageTitles[location.pathname];

@@ -9,7 +9,7 @@ const verseGroups = [
     [Verses[7], Verses[8]]
 ];
 
-const dates = [2.1, 3.1, 4.1, 5.1];
+const dates = [1.1, 2.1, 3.1, 4.1];
 let todaysVerseGroup = [Verses[0]];
 
 export default function VerseLine() {
@@ -20,7 +20,7 @@ export default function VerseLine() {
         const currentHour = new Date().getHours();
         let verseToShow;
 
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 4; i++) {
             if (dates[i] === Number(nowDate)) {
                 todaysVerseGroup = verseGroups[i];
             }

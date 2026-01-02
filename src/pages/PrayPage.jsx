@@ -9,6 +9,7 @@ export default function QuietTimePage() {
     const { prayId } = useParams();
 
     const group = getAuthGroup()
+    const roundIndex = Number(prayId); 
 
     const questions = [
         "Какую самую важную вещь в жизни вы игнорировали, но теперь она требует вашего внимания?",
@@ -78,15 +79,16 @@ export default function QuietTimePage() {
 
 
     const mergeMap = {
-        0: [0],
-        1: [1, 2],
-        2: [1, 2],
-        3: [3, 4],
-        4: [3, 4],
+        0: [0, 2],
+        1: [1],
+        2: [0, 2],
+        3: [3],
+        4: [4, 6],
+        5: [5],
+        6: [4, 6],
     };
 
     const [questionId, setQuestionId] = useState(0);
-    const roundIndex = Number(prayId);
 
     if (!group) {
         return <div>не найден</div>;
@@ -97,27 +99,29 @@ export default function QuietTimePage() {
     }
 
     const getMembersForGroupIds = (ids) => {
-        // Условие для фильтрации группы 0
-        if (ids.length === 1 && ids[0] === 0 && roundIndex > 2) {
-            const tempMembers = Groups[0]?.members || [];
-            return tempMembers.filter(member => member.name !== "Вика" && member.name !== "Милдред");
-        }
-        // Обычный случай
-        return ids.flatMap(id => Groups[id]?.members || []);
+        return ids.flatMap(targetId => {
+            // Ищем группу перебором, чтобы ID точно совпал, даже если порядок в JSON сбит
+            const foundGroup = Groups.find(g => g.id === targetId);
+            
+            // Если группы нет или в ней нет людей — возвращаем пустой массив
+            if (!foundGroup || !foundGroup.members) return [];
+            
+            return foundGroup.members;
+        });
     };
 
-    if (group.id === 5) {
+    if (group.id === 7) {
         const allPrayerMeetings = [
-            { title: "Группа Chetillilar (внутри себя)", groupIds: [0] },
-            { title: "Группы 'НЕМО' и 'Икринки'", groupIds: [1, 2] },
-            { title: "Группы 'КПД' и 'GPS'", groupIds: [3, 4] },
+            { title: "Группы МхМ и ТхР", groupIds: [0, 2] },
+            { title: "Группа ИхД", groupIds: [1] },
+            { title: "Группа ЮхО", groupIds: [3] },
+            { title: "Группы КхС х СхЮ", groupIds: [4, 6] },
+            { title: "Группа АхВ", groupIds: [5] },
         ];
 
         return (
             <div className="container">
                 <ReturnToSchedule />
-                <h1 className="text-3xl font-bold mb-4">Обзор всех пар (Админ)</h1>
-
                 {allPrayerMeetings.map((meeting, index) => {
                     const members = getMembersForGroupIds(meeting.groupIds);
                     // Добавляем ключевое слово return

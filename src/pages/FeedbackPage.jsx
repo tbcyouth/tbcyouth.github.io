@@ -53,12 +53,12 @@ export default function FeedbackPage() {
             });
         }
 
-        let message = `<b>ОТЗЫВ О СЕМИНАРЕ</b>\n`;
+        let message = `<b>❗ОТЗЫВ О СЕМИНАРЕ❗</b>\n`;
         message += `<b>Группа:</b> ${groupData?.name || "—"}\n`;
         message += `<b>ФИО:</b> ${username}\n\n`;
 
         questions.forEach((question, index) => {
-            message += `<b>${question}</b>\n${answers[index]}\n\n`;
+            message += `<b>${question}:</b>\n${answers[index]}\n\n`;
         });
 
         Swal.fire({

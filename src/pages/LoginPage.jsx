@@ -31,7 +31,7 @@ export default function LoginPage() {
 
         if (password === group.adminpass) {
             localStorage.setItem("groupId", group.id);
-            localStorage.setItem("isAdmin", "true");
+            localStorage.setItem("isAdmin", "zXsdjkck-23nsj22-lasd-222jd-pqpw");
             navigate("/group");
         } else if (password === group.password) {
             localStorage.setItem("groupId", group.id);
