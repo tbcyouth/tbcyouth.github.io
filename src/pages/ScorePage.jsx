@@ -118,6 +118,7 @@ export default function ScorePage() {
             <div className="mb-6">
                 <h5 className="font-medium mb-2">О какой группе?</h5>
                 <select
+                    defaultValue={otherGroups[0].name}
                     value={targetGroup}
                     onChange={(e) => setTargetGroup(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-xl"
