@@ -17,7 +17,7 @@ export default function ScorePage() {
     const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzZ1V38MeJpRhOEzYAbw4zfJ32EfVLwv9vT3Ibozefy_YH7H62pB8gMagT_a0U9PZa7/exec";
 
     const handleSubmit = () => {
-        if (!writer || !targetGroup || !description || !category) {
+        if (!writer || !description || !category) {
             Swal.fire("Ошибка", "Пожалуйста, заполните все поля", "error");
             return;
         }
@@ -85,7 +85,7 @@ export default function ScorePage() {
     const otherGroups = Groups.filter(group => group.name !== groupData?.name);
 
     return (
-        localStorage.getItem(`amountOfVotes-${new Date().getDate()}`) >= 3 ? 
+        localStorage.getItem(`amountOfVotes-${new Date().getDate()}`) === 1 ? 
             (<div className="container text-3xl mx-auto py-6 text-center">
                Вы проголосовали максимальное количество раз за сегодня
             </div>

@@ -33,7 +33,7 @@ export default function LoginPage() {
             localStorage.setItem("groupId", group.id);
             localStorage.setItem("isAdmin", "zXsdjkck-23nsj22-lasd-222jd-pqpw");
             navigate("/group");
-        } else if (password === group.password) {
+        } else if (password === group.password || password.replaceAll(" ", "") === group.password) {
             localStorage.setItem("groupId", group.id);
             localStorage.removeItem("isAdmin");
             navigate("/group");
