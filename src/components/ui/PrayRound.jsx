@@ -12,6 +12,14 @@ const algorithms = {
     14: [
         [ [1, 6], [2, 5], [3, 4], [0, 7], [8, 13], [9, 12], [10, 11] ],
         [ [0, 2], [3, 6], [4, 5], [1, 8], [7, 9], [10, 13], [11, 12] ],
+        [ [0, 4], [1, 3], [5, 6], [2, 9], [7, 11], [8, 10], [12, 13] ],
+        [ [0, 6], [1, 5], [2, 4], [3, 10], [7, 13], [8, 12], [9, 11] ],
+        [ [0, 1], [2, 6], [3, 5], [4, 11], [7, 8], [9, 13], [10, 12] ],
+        [ [0, 3], [1, 2], [4, 6], [5, 12], [7, 10], [8, 9], [11, 13] ]
+    ],
+    'special': [
+        [ [1, 6], [2, 5], [3, 4], [0, 7], [8, 13], [9, 12], [10, 11] ],
+        [ [0, 2], [3, 6], [4, 5], [1, 8], [7, 9], [10, 13], [11, 12] ],
         [ [0, 4], [1, 2], [5, 6], [3, 9], [7, 11], [8, 10], [12, 13] ],
         [ [0, 6], [1, 5], [2, 4], [3, 10], [7, 13], [8, 12], [9, 11] ],
         [ [0, 1], [2, 6], [3, 5], [4, 11], [7, 8], [9, 13], [10, 12] ],
@@ -24,7 +32,7 @@ export default function PrayRound({ allMembers = [], groupIds = [], roundId }) {
     const groupSize = allMembers.length;
     const group = getAuthGroup();
 
-    let roundPairs = (groupIds.length === 2 && groupIds[0] === 1) ? algorithms[groupSize + 100]?.[roundIndex] : algorithms[groupSize]?.[roundIndex];
+    let roundPairs = (groupIds.length === 2 && groupIds[0] === 5) ? algorithms['special']?.[roundIndex] : algorithms[groupSize]?.[roundIndex];
 
     if (!roundPairs) {
         return <div>Нет данных для такого раунда или размера группы. ({groupSize} участников, раунд {roundId})</div>;

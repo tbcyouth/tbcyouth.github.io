@@ -137,6 +137,7 @@ export default function QuietTimePage() {
 
     const effectiveGroupIds = mergeMap[group.id] || [group.id];
     const currentMembers = getMembersForGroupIds(effectiveGroupIds);
+    console.log(effectiveGroupIds, currentMembers);
 
     return (
         <div>
