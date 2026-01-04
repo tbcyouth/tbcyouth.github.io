@@ -282,9 +282,8 @@
     },
     {
       "time": "12:00",
-      "title": "Группа: Урок 4",
-      "color": "yellow",
-      "link": "/lesson/4"
+      "title": "Свободное время",
+      "color": "white"
     },
     {
       "time": "13:50",
@@ -305,8 +304,9 @@
     },
     {
       "time": "15:00",
-      "title": "Свободное время",
-      "color": "white"
+      "title": "Группа: Урок 4",
+      "color": "yellow",
+      "link": "/lesson/4"
     },
     {
       "time": "16:00",
