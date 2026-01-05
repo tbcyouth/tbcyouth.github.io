@@ -53,6 +53,12 @@ const links = [
         icon: "HeartPlus",
         isOpen: false,
     },
+    {
+        name: "Q & A",
+        link: "/question",
+        icon: "Mail",
+        isOpen: false,
+    },
     // {
     //     name: "Отзыв",
     //     link: "/feedback",
@@ -76,7 +82,7 @@ export default function Header({ title = "Title is empty", group = "Добро �
         // '/feedback': 'Отзыв',
         '/rule': 'Правила',
         '/score': 'Оценка',
-        // '/question': 'Вопросы',
+        '/question': 'Вопросы',
     };
 
     let currentTitle = pageTitles[location.pathname];
